@@ -1,0 +1,19 @@
+@gray-light: #dedede;
+@gray-dark: #ccc;
+
+.box-shadow(@gray: #333) {
+  -webkit-box-shadow: 0 5px 10px @gray;
+  -moz-box-shadow: 0 5px 10px @gray;
+  -ms-box-shadow: 0 5px 10px @gray;
+  -o-box-shadow: 0 5px 10px @gray;
+  box-shadow: 0 5px 10px @gray;
+}
+
+.box-shadow-center {
+  box-shadow: 0 0 5px @gray-dark;
+}
+
+.border-radius-medium {
+  border-radius: 2px;
+  .box-shadow-center ;
+}

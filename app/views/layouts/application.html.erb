@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Enterprise</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= yield :stylesheet_contents %>
+  <%= javascript_include_tag "application" %>
+  <%= yield :javascript_contents %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <header>
+  <div class="container">
+    <div class="navbar navbar-inverse nav">
+      <div class="container">
+        <div class="navbar-inner">
+          <a href="#" class="brand"> Your Logo </a>
+          <ul class="nav pull-right">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#"><i class="icon-star"></i><small>Language</small></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav>
+    <div class="container">
+      <ul class="nav child text-right inline">
+        <li>
+          <a href="#"><i class="icon-star"></i>Menu 1</a>
+        </li>
+        <li>
+          <a href="#"><i class="icon-star"></i>Menu 1</a>
+        </li>
+        <li>
+          <a href="#"><i class="icon-star"></i>Menu 1</a>
+        </li>
+        <li>
+          <a href="#"><i class="icon-star"></i>Menu 1</a>
+        </li>
+        <li>
+          <a href="#"><i class="icon-star"></i>Menu 1</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  </header>
+  <div class="container">
+    <%= yield %>
+  </div>
+
+</body>
+</html>

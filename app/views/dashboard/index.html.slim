@@ -1,0 +1,31 @@
+#myCarousel.carousel.slide
+  ol.carousel-indicators
+    li.active data-target="#myCarousel" data-slide-to="0"
+    li data-target="#myCarousel" data-slide-to="1"
+    li data-target="#myCarousel" data-slide-to="2"
+    li data-target="#myCarousel" data-slide-to="3"
+  / Carousel items
+  .carousel-inner
+    .item.active
+      = image_tag("/assets/1.jpg")
+    .item
+      = image_tag("/assets/2.jpg")
+    .item
+      = image_tag("/assets/5.jpg")
+    .item
+      = image_tag("/assets/4.jpg")
+  / Carousel items
+  = link_to "", "#mycarousel", data: {slide: "prev"}, class: "carousel-control left"
+  = link_to "", "#mycarousel", data: {slide: "next"}, class: "carousel-control right"
+
+section.box-container
+  = "asdsadsad"
+
+javascript:
+  $(document).ready(function() {
+    $(".carousel").carousel({
+      inteval: 2000
+    });
+  });
+
+
