@@ -9,15 +9,24 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require bootstrap_and_overrides
- *= require_tree .
+ *= require bootstrap
+ *= require responsive
  */
 
-.nav.child {
-  li {
-    width: auto;
-    a {
-      float: left;
-    }
-  }
+@font-face {
+  font-family: 'designosaur';
+  src: url('designosaur-regular-webfont.eot');
+  src: url('designosaur-regular-webfont.eot?#iefix') format('embedded-opentype'),
+       url('designosaur-regular-webfont.woff') format('woff'),
+       url('designosaur-regular-webfont.ttf') format('truetype'),
+       url('designosaur-regular-webfont.svg#designosaurregular') format('svg');
+  font-weight: 100;
+  font-style: normal;
 }
+
+body {
+  font-family: 'designosaur' !important;
+  font-size: 14px;
+}
+
+

@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.13'
 
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'libv8', '~> 3.11.8'
   gem 'therubyracer', :platforms => :ruby
@@ -35,7 +34,6 @@ group :production do
   gem 'passenger', '4.0.0.rc4'
 end
 
-gem 'twitter-bootstrap-rails'
 gem 'less-rails'
 gem 'thin'
 gem 'airbrake'

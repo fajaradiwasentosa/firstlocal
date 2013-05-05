@@ -9,44 +9,68 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <header>
-  <div class="container">
-    <div class="navbar navbar-inverse nav">
-      <div class="container">
-        <div class="navbar-inner">
-          <a href="#" class="brand"> Your Logo </a>
-          <ul class="nav pull-right">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">Contact Us</a></li>
-            <li><a href="#"><i class="icon-star"></i><small>Language</small></a></li>
-          </ul>
+  <div class="container-fluid nopad">
+    <div class="navbar navbar-inverse">
+      <div class="navbar-inner no-radius">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <i class="icon-list"></i>
+        </a>
+        <div class="navbar-inverse nav pull-left">
+          <a class="btn btn-navbar child-menu" data-toggle="collapse" data-target=".nav-collapse2" style="margin-left: 0;">
+            <i class="icon-home"></i>
+          </a>
+        </div>
+        <div class="container">
+          <div class="nav-collapse">
+            <ul class="nav pull-right">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#"><i class="icon-star"></i><small>Language</small></a></li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <nav>
-    <div class="container">
-      <ul class="nav child text-right inline">
-        <li>
-          <a href="#"><i class="icon-star"></i>Menu 1</a>
-        </li>
-        <li>
-          <a href="#"><i class="icon-star"></i>Menu 1</a>
-        </li>
-        <li>
-          <a href="#"><i class="icon-star"></i>Menu 1</a>
-        </li>
-        <li>
-          <a href="#"><i class="icon-star"></i>Menu 1</a>
-        </li>
-        <li>
-          <a href="#"><i class="icon-star"></i>Menu 1</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  </header>
   <div class="container">
+    <div class="span12 nomarg container child-header">
+      <div class="span2">
+        <%= image_tag "/assets/noImage.jpg" %>
+      </div>
+      <div class=" span9 nav-collapse2">
+        <ul class="nav inline pull-left">
+          <li>
+            <%= link_to "About Us", "#" %>
+          </li>
+          <li>
+            <%= link_to "Our Gallery", "#" %>
+          </li>
+          <li>
+            <%= link_to "Our Products", "#" %>
+          </li>
+          <li>
+            <%= link_to "Specification", "#" %>
+          </li>
+          <li>
+            <%= link_to "Promotions", "#" %>
+          </li>
+          <li>
+            <%= link_to "Tips and Tricks", "#" %>
+          </li>
+          <li>
+            <%= link_to "Online Requirements", "#" %>
+          </li>
+          <li>
+            <%= link_to "Our Agent", "#" %>
+          </li>
+          <li>
+            <%= link_to "Refences", "#" %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container" style="width: 100%;">
     <%= yield %>
   </div>
 

@@ -1,6 +1,7 @@
 Enterprise::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
-
+  config.less.paths << "#{Rails.root}/lib/less/protractor/stylesheets"
+  config.less.compress = true
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
@@ -30,7 +31,7 @@ Enterprise::Application.configure do
   config.active_record.auto_explain_threshold_in_seconds = 0.5
 
   # Do not compress assets
-  config.assets.compress = false
+  config.assets.compress = true
 
   # Expands the lines which load the assets
   config.assets.debug = true
