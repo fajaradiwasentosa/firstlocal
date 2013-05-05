@@ -35,6 +35,7 @@ group :production do
   gem 'passenger', '4.0.0.rc4'
 end
 
+gem 'less-rails'
 gem 'thin'
 gem 'airbrake'
 gem 'pg'
