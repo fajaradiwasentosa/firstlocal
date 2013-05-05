@@ -12,7 +12,6 @@ group :assets do
 end
 
 group :development do
-  gem 'thin'
   gem 'pry-rails'
   gem 'debugger'
   gem 'awesome_print'
@@ -36,6 +35,7 @@ group :production do
   gem 'passenger', '4.0.0.rc4'
 end
 
+gem 'thin'
 gem 'airbrake'
 gem 'pg'
 gem 'jquery-rails'
