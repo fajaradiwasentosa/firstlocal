@@ -1,9 +1,6 @@
-MyProject::Application.configure do
+Enterprise::Application.configure do
   config.less.paths << "#{Rails.root}/lib/less/protractor/stylesheets"
   config.less.compress = true
-end
-
-Enterprise::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
   # Code is not reloaded between requests
