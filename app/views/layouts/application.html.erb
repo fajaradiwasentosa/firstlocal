@@ -10,7 +10,7 @@
 </head>
 <body>
   <div class="container-fluid nopad">
-    <div class="navbar navbar-inverse">
+    <div class="navbar navbar-inverse nomarg">
       <div class="navbar-inner no-radius">
         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
           <i class="icon-list"></i>
@@ -32,43 +32,49 @@
       </div>
     </div>
   </div>
-  <div class="container">
+  <div class="container-fluid">
     <div class="span12 nomarg container child-header">
-      <div class="span2">
-        <%= image_tag "/assets/noImage.jpg" %>
-      </div>
-      <div class=" span9 nav-collapse2">
-        <ul class="nav inline pull-left">
-          <li>
-            <%= link_to "About Us", "#" %>
-          </li>
-          <li>
-            <%= link_to "Our Gallery", "#" %>
-          </li>
-          <li>
-            <%= link_to "Our Products", "#" %>
-          </li>
-          <li>
-            <%= link_to "Specification", "#" %>
-          </li>
-          <li>
-            <%= link_to "Promotions", "#" %>
-          </li>
-          <li>
-            <%= link_to "Tips and Tricks", "#" %>
-          </li>
-          <li>
-            <%= link_to "Online Requirements", "#" %>
-          </li>
-          <li>
-            <%= link_to "Our Agent", "#" %>
-          </li>
-          <li>
-            <%= link_to "Refences", "#" %>
-          </li>
-        </ul>
+      <div class="row-fluid">
+        <div class=" span12 nav-collapse2 main-navbar nomarg">
+          <div class="row-fluid">
+            <ul class="nav inline span12 nomarg">
+              <li>
+                <%= link_to "About Us", "#" %>
+              </li>
+              <li>
+                <%= link_to "Our Gallery", "#" %>
+              </li>
+              <li>
+                <%= link_to "Our Products", "#" %>
+              </li>
+              <li>
+                <%= link_to "Specification", "#" %>
+              </li>
+              <li>
+                <%= link_to "Promotions", "#" %>
+              </li>
+              <li>
+                <%= link_to "Tips and Tricks", "#" %>
+              </li>
+              <li>
+                <%= link_to "Online Requirements", "#" %>
+              </li>
+              <li>
+                <%= link_to "Our Agent", "#" %>
+              </li>
+              <li>
+                <%= link_to "Refences", "#" %>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
+  </div>
+  <div class="container">
+      <div class="span2 text-center">
+        <%= image_tag "/assets/noImage.jpg" %>
+      </div>
   </div>
   <div class="container" style="width: 100%;">
     <%= yield %>
