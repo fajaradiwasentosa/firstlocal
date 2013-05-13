@@ -14,19 +14,31 @@
  */
 
 @font-face {
-  font-family: 'designosaur';
-  src: url('designosaur-regular-webfont.eot');
-  src: url('designosaur-regular-webfont.eot?#iefix') format('embedded-opentype'),
-       url('designosaur-regular-webfont.woff') format('woff'),
-       url('designosaur-regular-webfont.ttf') format('truetype'),
-       url('designosaur-regular-webfont.svg#designosaurregular') format('svg');
-  font-weight: 100;
+  font-family: 'open_sansregular';
+  src: url('opensans-regular-webfont.eot');
+  src: url('opensans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+       url('opensans-regular-webfont.woff') format('woff'),
+       url('opensans-regular-webfont.ttf') format('truetype'),
+       url('opensans-regular-webfont.svg#open_sansregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'open_sanslight';
+  src: url('opensans-light-webfont.eot');
+  src: url('opensans-light-webfont.eot?#iefix') format('embedded-opentype'),
+       url('opensans-light-webfont.woff') format('woff'),
+       url('opensans-light-webfont.ttf') format('truetype'),
+       url('opensans-light-webfont.svg#open_sanslight') format('svg');
+  font-weight: normal;
   font-style: normal;
 }
 
 body {
-  font-family: 'designosaur' !important;
+  font-family: 'open_sansregular' !important;
   font-size: 14px;
+  background-image: url(bg.png);
 }
 
 

@@ -1,0 +1,118 @@
+#myCarousel.carousel.slide style="width=100%;"
+  ol.carousel-indicators
+    li.active data-target="#myCarousel" data-slide-to="0"
+    li data-target="#myCarousel" data-slide-to="1"
+    li data-target="#myCarousel" data-slide-to="2"
+    li data-target="#myCarousel" data-slide-to="3"
+  / Carousel items
+  .carousel-inner
+    .item.active
+      = image_tag("/assets/1.jpg")
+    .item
+      = image_tag("/assets/2.jpg")
+    .item
+      = image_tag("/assets/3.jpg")
+  / Carousel items
+  / = link_to "", "#mycarousel", data: {slide: "prev"}, class: "carousel-control left"
+  / = link_to "", "#mycarousel", data: {slide: "next"}, class: "carousel-control right"
+
+.container
+  .row-fluid
+    .span12
+      .main-container.pull-left
+        .mart50
+          .row-fluid
+            .span8
+              .row-fluid
+                .span12.nomarg
+                  .row-fluid
+                    .span12
+                      .box-container
+                        .left-container-content
+                          .title-container
+                            = image_tag "/assets/camera32.png"
+                            = link_to "Products", "javascript:void(0);"
+
+                          .content
+                            = image_tag "/assets/no_avatar-xlarge.jpg"
+                            .content-detail
+                              p
+                                = "Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum "
+                                = link_to "read more", "javascript:void(0);"
+                          .content
+                            = image_tag "/assets/no_avatar-xlarge.jpg"
+                            .content-detail
+                              p
+                                = "Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum "
+                                = link_to "read more", "javascript:void(0);"
+                          .title-container
+                            = image_tag "/assets/cup32.png"
+                            = link_to "Tips and Tricks", "javascript:void(0);"
+                          .content
+                            = image_tag "/assets/no_avatar-xlarge.jpg"
+                            .content-detail
+                              p
+                                = "Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum "
+                                = link_to "read more", "javascript:void(0);"
+                          .content
+                            = image_tag "/assets/no_avatar-xlarge.jpg"
+                            .content-detail
+                              p
+                                = "Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum "
+                                = link_to "read more", "javascript:void(0);"
+
+
+
+            .span4
+              .right-container
+                .row-fluid
+                  .span12
+                    .title-container
+                      = image_tag "/assets/bag32.png"
+                      = link_to "Contact Us", "javascript:void(0);"
+                    .content-contact
+                      .contact-detail
+                        = image_tag "/assets/home32.png"
+                        p
+                          = "Sesame Street no.14 US"
+                      .contact-detail
+                        = image_tag "/assets/phone32.png"
+                        p
+                          = "+62 896 5615 7141"
+                      .contact-detail
+                        = image_tag "/assets/mail32.png"
+                        p
+                          = "fajaradiwa@gmail.com"
+                      .contact-detail
+                        = image_tag "/assets/smile32.png"
+                        p
+                          = "fajaradiwasentosa@ymail.com"
+
+                    .title-container
+                      = image_tag "/assets/comment32.png"
+                      = link_to "Testimonial", "javascript:void(0);"
+                    .content
+                      = image_tag "/assets/no_avatar-xlarge.jpg"
+                      .content-detail
+                        .name
+                          = "Fajar Adiwa Sentosa"
+                        .email
+                          = "fajaradiwa@gmail.com"
+                        p
+                          = "Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum"
+                    .content
+                      = image_tag "/assets/no_avatar-xlarge.jpg"
+                      .content-detail
+                        .name
+                          = "Fajar Adiwa Sentosa"
+                        .email
+                          = "fajaradiwa@gmail.com"
+                        p
+                          = "Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum"
+
+= content_for :javascript_contents do
+  script src="/assets/bootstrap-carousel"
+  script src="/assets/dashboard"
+
+
+

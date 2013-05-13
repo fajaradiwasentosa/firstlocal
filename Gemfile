@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.13'
 
 group :assets do
-  gem 'coffee-rails', '~> 3.2.1'
   gem 'libv8', '~> 3.11.8'
   gem 'therubyracer', :platforms => :ruby
   gem 'uglifier', '>= 1.0.3'
@@ -34,6 +33,7 @@ group :production do
   gem 'passenger', '4.0.0.rc4'
 end
 
+gem 'coffee-rails', '~> 3.2.1'
 gem 'less-rails'
 gem 'thin'
 gem 'airbrake'
