@@ -24,7 +24,11 @@
           <div class="nav-collapse">
             <ul class="nav pull-right">
               <li class="active"><a href="#"><small>Home</small></a></li>
-              <li><a href="#"><small>About Us</small></a></li>
+              <li>
+                <%= link_to profiles_index_path do %>
+                  <small>About Us</small>
+                <% end %>
+              </li>
               <li><a href="#"><small>Products</small></a></li>
               <li><a href="#"><small>Promotions</small></a></li>
               <li><a href="#"><small>Language</small></a></li>
@@ -36,11 +40,13 @@
       </div>
     </div>
   </div>
-  <div class="container">
+  <% if params[:container].eql?("dashboard") %>
+    <div class="container">
       <div class="span2 text-center padv-20">
         <%= image_tag "/assets/noImage.jpg" %>
       </div>
-  </div>
+    </div>
+  <% end %>
   <div class="container" style="width: 100%;">
     <%= yield %>
   </div>

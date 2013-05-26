@@ -1,4 +1,6 @@
 Enterprise::Application.routes.draw do
+  get "profiles/index"
+
   devise_for :users
 
   get "dashboard/index"

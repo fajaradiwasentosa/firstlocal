@@ -1,0 +1,13 @@
+.span12
+  .row-fluid
+    .span3.profile-left-container data-spy="affix" data-offset-top="100"
+      = image_tag "/assets/noImage.jpg"
+    .span9.profile-left-container
+      .span12.title-container
+        h2.pull-left= "Safety and Powerful Products"
+      .span12.nomarg.profile-description
+        = "lorem ipsum dipsum"
+= content_for :javascript_contents do
+  script src="/assets/bootstrap-carousel"
+  script src="/assets/dashboard"
+
