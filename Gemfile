@@ -34,12 +34,12 @@ group :production do
 end
 
 gem 'coffee-rails', '~> 3.2.1'
+gem 'slim-rails'
 gem 'less-rails'
 gem 'thin'
 gem 'airbrake'
 gem 'pg'
 gem 'jquery-rails'
-gem 'slim-rails'
 gem 'kaminari'
 gem 'kaminari-bootstrap'
 gem 'better_logging'

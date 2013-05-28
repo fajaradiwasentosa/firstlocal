@@ -1,10 +1,9 @@
 Enterprise::Application.routes.draw do
-  get "profiles/index"
-
   devise_for :users
 
+  get "products/index"
+  get "profiles/index"
   get "dashboard/index"
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
