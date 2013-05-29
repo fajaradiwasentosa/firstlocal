@@ -1,3 +1,43 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Less here: http://lesscss.org/
+@import "variable.less";
+@import "global.less";
+
+.products-container {
+  .title-container {
+    text-shadow: 0 1px #fff;
+    color: @brandColor;
+  }
+  float: left;
+  padding: 30px 0;
+  .product-content {
+    float: left;
+    .item {
+      float: left;
+      .image-container {
+        float: left;
+        padding: 15px;
+        background-color: #eee;
+        border-radius: 7px;
+        .box-shadow(@shadow);
+        .image {
+          float: left;
+          .border-top-radius(7px);
+          &:hover {
+            -webkit-filter: grayscale 50%;
+            -moz-filter: grayscale 50%;
+            -o-filter: grayscale 50%;
+            filter: grayscale 50%;
+            .transition(2s;)
+          }
+        }
+        .description {
+          float: left;
+          font-size: 12px;
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+}

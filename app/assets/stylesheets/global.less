@@ -98,6 +98,14 @@ body {
   box-shadow: inset 2px 2px 2px #ccc;
 }
 
+// Border Radius
+.border-radius(@first: 0, @sec: 0, @thr: 3px, @color: #ccc){
+  -webkit-border-radius: @first @sec @thr @color;
+  -moz-border-radius: @first @sec @thr @color;
+  -o-border-radius: @first @sec @thr @color;
+  border-radius: @first @sec @thr @color;
+}
+
 // Separator
 .separator {
   float: left !important;
