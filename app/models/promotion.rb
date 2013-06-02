@@ -3,4 +3,5 @@ class Promotion < ActiveRecord::Base
 
   attr_accessible :description, :image, :title
 
+  validates_presence_of :title
 end

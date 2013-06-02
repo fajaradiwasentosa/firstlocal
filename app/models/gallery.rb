@@ -4,4 +4,6 @@ class Gallery < ActiveRecord::Base
 
   attr_accessible :description, :image
 
+  validates_presence_of :image
+
 end

@@ -6,7 +6,7 @@ ActiveAdmin.register Promotion do
     default_actions
   end
 
-  filter :email
+  filter :title
 
   form(:html => {multipart: true}) do |f|
     f.inputs "Admin Details" do

@@ -6,12 +6,17 @@
     li data-target="#myCarousel" data-slide-to="3"
   / Carousel items
   .carousel-inner
-    .item.active
-      = image_tag("/assets/1.jpg")
-    .item
-      = image_tag("/assets/2.jpg")
-    .item
-      = image_tag("/assets/3.jpg")
+    - if !@galleries.nil?
+      - @galleries.each do |gallery|
+        .item
+          = image_tag gallery.image
+    - else
+      .item
+        = image_tag "/assets/1.jpg"
+      .item
+        = image_tag "/assets/1.jpg"
+      .item
+        = image_tag "/assets/1.jpg"
   / Carousel items
   / = link_to "", "#mycarousel", data: {slide: "prev"}, class: "carousel-control left"
   / = link_to "", "#mycarousel", data: {slide: "next"}, class: "carousel-control right"
@@ -32,49 +37,52 @@
                           .title-container
                             = image_tag "/assets/camera32.png"
                             = link_to "Products", "javascript:void(0);"
-
-                          .content
-                            = image_tag "/assets/no_avatar-xlarge.jpg"
-                            .content-detail.pull-left
-                              p
-                                = "Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum "
-                                = link_to "read more", "javascript:void(0);"
-                          .content
-                            = image_tag "/assets/no_avatar-xlarge.jpg"
-                            .content-detail
-                              p
-                                = "Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum "
-                                = link_to "read more", "javascript:void(0);"
+                          - if !@products.nil?
+                            - @products.each do |product|
+                              .content
+                                - if !product.image.blank?
+                                  = image_tag product.image
+                                - else
+                                  = image_tag "/assets/no_avatar-xlarge.jpg"
+                                .content-detail.pull-left
+                                  h3
+                                    = product.name
+                                  p
+                                    = truncate(product.description, length: 150)
+                                    | &nbsp;
+                                    = link_to "read more", product_path(product.id)
                           .title-container
                             = image_tag "/assets/cup32.png"
                             = link_to "Tips and Tricks", "javascript:void(0);"
-                          .content
-                            = image_tag "/assets/no_avatar-xlarge.jpg"
-                            .content-detail
-                              p
-                                = "Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum "
-                                = link_to "read more", "javascript:void(0);"
-                          .content
-                            = image_tag "/assets/no_avatar-xlarge.jpg"
-                            .content-detail
-                              p
-                                = "Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum "
-                                = link_to "read more", "javascript:void(0);"
+                          - if !@tips_and_tricks.nil?
+                            - @tips_and_tricks.each do |trick|
+                              .content
+                                - if !trick.image.blank?
+                                  = image_tag trick.image
+                                - else
+                                  = image_tag "/assets/no_avatar-xlarge.jpg"
+                                .content-detail.pull-left
+                                  p
+                                    = truncate(trick.description, length: 150)
+                                    | &nbsp;
+                                    = link_to "read more", trick_path(trick.id)
                           .title-container
                             = image_tag "/assets/risegraph32.png"
                             = link_to "Promotion", "javascript:void(0);"
-                          .content
-                            = image_tag "/assets/no_avatar-xlarge.jpg"
-                            .content-detail
-                              p
-                                = "Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum "
-                                = link_to "read more", "javascript:void(0);"
-                          .content
-                            = image_tag "/assets/no_avatar-xlarge.jpg"
-                            .content-detail
-                              p
-                                = "Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum "
-                                = link_to "read more", "javascript:void(0);"
+                          - if !@promotions.nil?
+                            - @promotions.each do |promotion|
+                              .content
+                                - if !promotion.image.blank?
+                                  = image_tag promotion.image
+                                - else
+                                  = image_tag "/assets/no_avatar-xlarge.jpg"
+                                .content-detail.pull-left
+                                  h3
+                                    = promotion.title
+                                  p
+                                    = truncate(promotion.description, length: 150)
+                                    | &nbsp;
+                                    = link_to "read more", promotion_path(promotion.id)
             .span4
               .right-container
                 .row-fluid
@@ -86,19 +94,19 @@
                       .contact-detail
                         = image_tag "/assets/home32.png"
                         p
-                          = "Sesame Street no.14 US"
+                          = @profile.address
                       .contact-detail
                         = image_tag "/assets/phone32.png"
                         p
-                          = "+62 896 5615 7141"
+                          = @profile.phone
                       .contact-detail
                         = image_tag "/assets/mail32.png"
                         p
-                          = "fajaradiwa@gmail.com"
+                          = @profile.email
                       .contact-detail
                         = image_tag "/assets/smile32.png"
                         p
-                          = "fajaradiwasentosa@ymail.com"
+                          = @profile.email
                     .title-container
                       = image_tag "/assets/commentblack32.png"
                       = link_to "Chat Us", "javascript:void(0);"
@@ -107,28 +115,20 @@
                         = image_tag "/assets/social-balloon-yahoo-icon.png"
                         a href="javascript:void(0);"
                           p
-                            = "Sesame Street no.14 US"
+                            = @profile.email
                     .title-container
                       = image_tag "/assets/comment32.png"
                       = link_to "Testimonial", "javascript:void(0);"
-                    .content
-                      = image_tag "/assets/no_avatar-xlarge.jpg"
-                      .content-detail
-                        .name
-                          = "Fajar Adiwa Sentosa"
-                        .email
-                          = "fajaradiwa@gmail.com"
-                        p
-                          = "Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum"
-                    .content
-                      = image_tag "/assets/no_avatar-xlarge.jpg"
-                      .content-detail
-                        .name
-                          = "Fajar Adiwa Sentosa"
-                        .email
-                          = "fajaradiwa@gmail.com"
-                        p
-                          = "Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum"
+                    - if !@messages.nil?
+                      - @messages.each do |message|
+                        .content
+                          .content-detail
+                            .name
+                              = message.name
+                            .email
+                              = message.email
+                            p
+                              = message.message
 
 = content_for :javascript_contents do
   script src="/assets/bootstrap-carousel"

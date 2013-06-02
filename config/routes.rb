@@ -11,6 +11,8 @@ Enterprise::Application.routes.draw do
   resources :galleries
   resources :contacts
   resources :messages
+  resources :products
+  resources :tricks
 
   match 'contact' => 'message#create', :as => 'contact', :via => :post
 

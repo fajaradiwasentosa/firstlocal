@@ -4,4 +4,6 @@ class Product < ActiveRecord::Base
 
   attr_accessible :block_per_vallet, :brick_wall, :description, :height, :image, :long, :name, :volume, :weight_per_vallet, :width
 
+  validates_presence_of :name
+
 end

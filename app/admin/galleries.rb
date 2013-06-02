@@ -5,7 +5,7 @@ ActiveAdmin.register Gallery do
     default_actions
   end
 
-  filter :email
+  filter :image
 
   form(:html => {multipart: true}) do |f|
     f.inputs "Admin Details" do

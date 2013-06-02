@@ -8,6 +8,7 @@ ActiveAdmin.register Profile do
     column :email
     column :phone
     column :zipcode
+    column :location_description
     default_actions
   end
 
@@ -20,8 +21,8 @@ ActiveAdmin.register Profile do
       f.input :description
       f.input :city
       f.input :address
-      f.input :email
-      f.input :phone
+      f.input :email, as: :email
+      f.input :phone, as: :phone
       f.input :zipcode
     end
     f.actions
