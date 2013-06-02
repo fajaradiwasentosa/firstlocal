@@ -119,7 +119,7 @@
                     .title-container
                       = image_tag "/assets/comment32.png"
                       = link_to "Testimonial", "javascript:void(0);"
-                    - if !@messages.empty?
+                    - if !@messages.nil?
                       - @messages.each do |message|
                         .content
                           .content-detail
