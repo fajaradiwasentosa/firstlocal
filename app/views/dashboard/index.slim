@@ -94,19 +94,23 @@
                       .contact-detail
                         = image_tag "/assets/home32.png"
                         p
-                          = @profile.address
+                          - if !@profile.nil?
+                            = @profile.address
                       .contact-detail
                         = image_tag "/assets/phone32.png"
                         p
-                          = @profile.phone
+                          - if !@profile.nil?
+                            = @profile.phone
                       .contact-detail
                         = image_tag "/assets/mail32.png"
                         p
-                          = @profile.email
+                          - if !@profile.nil?
+                            = @profile.email
                       .contact-detail
                         = image_tag "/assets/smile32.png"
                         p
-                          = @profile.email
+                          - if !@profile.nil?
+                            = @profile.email
                     .title-container
                       = image_tag "/assets/commentblack32.png"
                       = link_to "Chat Us", "javascript:void(0);"
@@ -115,7 +119,21 @@
                         = image_tag "/assets/social-balloon-yahoo-icon.png"
                         a href="javascript:void(0);"
                           p
-                            = @profile.email
+                            - if !@profile.nil?
+                              = @profile.email
+                    .title-container
+                      = image_tag "/assets/comment32.png"
+                      = link_to "Testimonial", "#"
+                    - if !@messages.nil?
+                      - @messages.each do |message|
+                        .content
+                          .content-detail
+                            .name
+                              = message.name
+                            .email
+                              = message.email
+                            p
+                              = message.message
 
 = content_for :javascript_contents do
   script src="/assets/bootstrap-carousel"
