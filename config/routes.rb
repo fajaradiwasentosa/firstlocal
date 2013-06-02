@@ -1,9 +1,30 @@
 Enterprise::Application.routes.draw do
-  devise_for :users
 
-  get "products/index"
-  get "profiles/index"
-  get "dashboard/index"
+  get "promotions/index"
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+
+  devise_for :users
+  ActiveAdmin.routes(self)
+
+  resources :galleries
+  resources :contacts
+  resources :messages
+
+  match 'contact' => 'message#create', :as => 'contact', :via => :post
+
+  get "orders/index"
+  get "contacts/index"
+  get "tricks/index"
+  get "/products" => "products#index", as: :products
+  get "/profiles" => "profiles#index", as: :profiles
+  get "/dashboard" => "dashboard#index", as: :dashboard
+  get "/tips_and_tricks" => "tricks#index", as: :tip_and_trick
+  get "/contact_us" => "messages#index", as: :contact_us
+  get "/galleries" => "galleries#index", as: :gallery
+  get "/order" => "orders#index", as: :order
+  get "/promotions" => "promotions#index", as: :promotion
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -10,87 +10,144 @@
 </head>
 <body>
   <div class="container-fluid nopad">
-    <div class="navbar navbar-custom nomarg navbar-fixed-top">
+    <div class="navbar nomarg navbar-fixed-top">
       <div class="navbar-inner no-radius">
         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-          <i class="icon-list"></i>
+          <i class="icon-home"></i>
         </a>
-        <div class="navbar-inverse nav pull-left">
-          <a class="btn btn-navbar child-menu" data-toggle="collapse" data-target=".nav-collapse2" style="margin-left: 0;">
-            <i class="icon-home"></i>
-          </a>
-        </div>
         <div class="container">
           <div class="nav-collapse">
             <ul class="nav pull-right">
-              <li class="active">
-                <%= link_to root_path, class: "home" do %>
+              <% if params[:controller].eql? "dashboard" %>
+                <li class="home active">
+                  <%= link_to dashboard_path, data: {no_turbolink: true} do %>
+                    <small>Home</small>
+                  <% end %>
+                </li>
+              <% else %>
+                <li class="home">
+                <%= link_to dashboard_path, data: {no_turbolink: true} do %>
                   <small>Home</small>
                 <% end %>
               </li>
-              <li class="dropdown">
-                <%= link_to "javascript:void(0);",id: "dLabel", role: "button", data: {toggle: "dropdown", target: "#"}, class: "dropdown-toggle" do %>
-                  <small>About Us</small>
-                  <b class="caret"></b>
-                <% end %>
-                <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                  <li role="presentation">
-                    <%= link_to products_index_path, class: "product", role: "menuitem", tabindex: "-1" do %>
-                      <small>Products</small>
-                    <% end %>
-                  </li>
-                  <li role="presentation">
-                    <%= link_to profiles_index_path, class: "promotion", role: "menuitem", tabindex: "-1" do %>
-                      <small>Promotions</small>
-                    <% end %>
-                  </li>
-                  <li role="presentation">
-                    <%= link_to profiles_index_path, class: "aboutus", role: "menuitem", tabindex: "-1" do %>
-                      <small>Our Profile</small>
-                    <% end %>
-                  </li>
-                </ul>
-              </li>
-              <li class="">
-                <%= link_to profiles_index_path, class: "language" do %>
-                  <small>Language</small>
-                <% end %>
-              </li>
-              <li class="">
-                <%= link_to profiles_index_path, class: "order" do %>
-                  <small>Order</small>
-                <% end %>
-              </li>
-              <li class="">
-                <%= link_to profiles_index_path, class: "ouragent" do %>
-                  <small>Our Agents</small>
-                <% end %>
-              </li>
+              <% end %>
+              <% if params[:controller].eql?("products") || params[:controller].eql?("promotions") || params[:controller].eql?("profiles")  %>
+                <li class="dropdown about-us active">
+                  <%= link_to "javascript:void(0);",id: "dLabel", role: "button", data: {toggle: "dropdown", target: "#"}, class: "dropdown-toggle", data: {no_turbolink: true} do %>
+                    <small>About Us</small>
+                    <b class="caret"></b>
+                  <% end %>
+                  <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                    <li role="presentation">
+                      <%= link_to products_path, class: "product", role: "menuitem", tabindex: "-1", data: {no_turbolink: true} do %>
+                        <small>Products</small>
+                      <% end %>
+                    </li>
+                    <li role="presentation">
+                      <%= link_to profiles_path, class: "promotion", role: "menuitem", tabindex: "-1", data: {no_turbolink: true} do %>
+                        <small>Promotions</small>
+                      <% end %>
+                    </li>
+                    <li role="presentation">
+                      <%= link_to profiles_path, class: "aboutus", role: "menuitem", tabindex: "-1", data: {no_turbolink: true} do %>
+                        <small>Our Profile</small>
+                      <% end %>
+                    </li>
+                  </ul>
+                </li>
+              <% else %>
+                <li class="dropdown about-us">
+                  <%= link_to "javascript:void(0);",id: "dLabel", role: "button", data: {toggle: "dropdown", target: "#"}, class: "dropdown-toggle", data: {no_turbolink: true} do %>
+                    <small>About Us</small>
+                    <b class="caret"></b>
+                  <% end %>
+                  <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                    <li role="presentation">
+                      <%= link_to products_path, class: "product", role: "menuitem", tabindex: "-1", data: {no_turbolink: true} do %>
+                        <small>Products</small>
+                      <% end %>
+                    </li>
+                    <li role="presentation">
+                      <%= link_to promotion_path, class: "promotion", role: "menuitem", tabindex: "-1", data: {no_turbolink: true} do %>
+                        <small>Promotions</small>
+                      <% end %>
+                    </li>
+                    <li role="presentation">
+                      <%= link_to profiles_path, class: "aboutus", role: "menuitem", tabindex: "-1", data: {no_turbolink: true} do %>
+                        <small>Our Profile</small>
+                      <% end %>
+                    </li>
+                  </ul>
+                </li>
+              <% end %>
+              <% if params[:controller].eql? "tricks" %>
+                <li class="trick active">
+                  <%= link_to tip_and_trick_path, data: {no_turbolink: true} do %>
+                    <small>Tips and Trick</small>
+                  <% end %>
+                </li>
+              <% else %>
+                <li class="trick">
+                  <%= link_to tip_and_trick_path, data: {no_turbolink: true} do %>
+                    <small>Tips and Trick</small>
+                  <% end %>
+                </li>
+              <% end %>
+              <% if params[:controller].eql? "orders" %>
+                <li class="order active">
+                  <%= link_to profiles_path, data: {no_turbolink: true} do %>
+                    <small>Order</small>
+                  <% end %>
+                </li>
+              <% else %>
+                <li class="order">
+                  <%= link_to order_path, data: {no_turbolink: true} do %>
+                    <small>Order</small>
+                  <% end %>
+                </li>
+              <% end %>
+              <% if params[:controller].eql? "galleries" %>
+                <li class="gallery active">
+                  <%= link_to profiles_path, data: {no_turbolink: true} do %>
+                    <small>Gallery</small>
+                  <% end %>
+                </li>
+              <% else %>
+                <li class="gallery">
+                  <%= link_to gallery_path, data: {no_turbolink: true} do %>
+                    <small>Gallery</small>
+                  <% end %>
+                </li>
+              <% end %>
+              <% if params[:controller].eql? "contacts" %>
+                <li class="contact-us active">
+                  <%= link_to contact_us_path, data: {no_turbolink: true} do %>
+                    <small>Contact Us</small>
+                  <% end %>
+                </li>
+              <% else %>
+                <li class="contact-us">
+                  <%= link_to contact_us_path, data: {no_turbolink: true} do %>
+                    <small>Contact Us</small>
+                  <% end %>
+                </li>
+              <% end %>
             </ul>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <% if params[:controller].eql?("dashboard") %>
-    <div class="container">
-      <div class="span2 text-center padv-20">
-        <%= image_tag "/assets/noImage.jpg" %>
-      </div>
-    </div>
-  <% end %>
   <div class="container" style="margin-top: 3%;">
     <%= yield %>
   </div>
-  <% if params[:controller].eql?("dashboard") %>
-    <div class="container">
-      <div class="footer">
-        copyright &copy; 2013
-      </div>
+  <div class="container">
+    <div class="footer">
+      copyright &copy; PT. Gemilang Pratama Polikem 2013
     </div>
-  <% end %>
+  </div>
   <script type="text/javascript">
-    $(".dropdown-toggle").dropdown();
+    $(".dropdown-toggle").dropdown()
   </script>
 </body>
 </html>

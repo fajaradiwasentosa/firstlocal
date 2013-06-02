@@ -1,0 +1,61 @@
+// Place all the styles related to the messages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#contact-us-container {
+  margin-top: 100px;
+  width: 60%;
+  background-color: #fff;
+  .border-radius(3px);
+  .light-box-shadow(@lightBoxShadow);
+  .header-container {
+    float: left;
+    color: rgb(167, 167, 167);
+    width: 100%;
+    border-bottom: 1px solid #dedede;
+    h3 {
+      width: 80%;
+      float: left;
+    }
+    img {
+      float: left;
+      margin: 14px;
+      opacity: .4;
+    }
+  }
+  .content-container {
+    float: left;
+    width: 100%;
+    .content-left-container {
+      float: left;
+      padding-bottom: 20px;
+      form {
+        margin: 20px;
+        .field {
+          float: left;
+          width: 90%;
+          label {
+            color: #999;
+            margin-top: 10px;
+            line-height: 1px;
+          }
+          input, textarea {
+            font-family: "open_sansregular";
+            font-size: 12px;
+            width: 100%;
+            float: left;
+            .border-radius(0);
+          }
+          &:placeholder {
+            color: #dedede;
+          }
+          textarea {
+            resize: none;
+          }
+        }
+      }
+    }
+    .content-right-container {
+
+    }
+  }
+}

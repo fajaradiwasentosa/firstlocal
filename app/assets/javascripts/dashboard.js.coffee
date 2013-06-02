@@ -3,8 +3,9 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $(document).ready ->
+
   $('.child-menu').click ->
-    $('.nav-collapse2').removeClass('hide');
+    $('.nav-collapse2').removeClass 'hide'
 
   $(".carousel").carousel ->
     inteval: 5000

@@ -6,11 +6,7 @@
 
 #profile-container {
   .profile-left-container {
-    -webkit-box-shadow: 0 0 4px #ccc;
-    -moz-box-shadow: 0 0 4px #ccc;
-    box-shadow: 0 0 4px #ccc;
     padding: 10px;
-    background-color: @white;
     .list-container, .list2-container {
       float: left;
       width: 100%;
@@ -29,7 +25,7 @@
       border-bottom: 1px solid #dedede;
       border-top: 1px solid rgb(245, 245, 245);
       &:first-child {
-        border-top: none;
+        border-top: none !important;
       }
       &:last-child {
         border-bottom: none;
@@ -44,11 +40,68 @@
         color: #666;
       }
     }
+    .widget-container {
+      margin-top: 20px !important;
+      a {
+        float: left;
+        color: #ccc;
+        &:hover {
+          color: @brandColor;
+        }
+        img {
+          float: left;
+          width: 30%;
+          -webkit-filter: grayscale(100%);
+          -moz-filter: grayscale(100%);
+          filter: grayscale(100%);
+          &:hover {
+            float: left;
+            -webkit-filter: grayscale(50%);
+            -moz-filter: grayscale(50%);
+            filter: grayscale(50%);
+          }
+        }
+        p {
+          float: left;
+          margin-left: 10px;
+          margin-top: 27px;
+          font-size: 20px;
+        }
+      }
+    }
   }
   .profile-right-container {
     background-color: rgba(255,255,255, .3);
     padding: 20px 17px;
     border: 1px solid #dedede;
+    .row {
+      margin-left: 0;
+      .span4 {
+        padding-bottom: 15px;
+        .promotion {
+          width: 100%;
+          img {
+            margin-bottom: 20px;
+          }
+        }
+        h2 {
+          color: #a27b00;
+          text-align: center;
+        }
+        p {
+          margin: 0;
+          padding-left: 12px;
+          font-size: 12px;
+        }
+        .image-container {
+          img {
+            margin: 6px;
+            width: 25%;
+            border: 3px solid #fff;
+          }
+        }
+      }
+    }
     .title-container {
       .text-shadow(0 1px @white);
       color: @brandColor;

@@ -1,7 +1,7 @@
 <div class="span12 nomarg" id="profile-container">
   <div class="row-fluid">
     <div class="span3 profile-left-container">
-      <h3>PT. Gemlang Pratama Polikem</h3>
+      <h3>PT. Gemilang Pratama Polikem</h3>
       <div class="content span12 nomarg">
         <i class="icon-home pull-left"></i>
         <p class="pull-left description">Jl. Sesame Street</p>
@@ -31,6 +31,7 @@
         <p class="pull-left description">Jl. Sesame Street</p>
       </div>
     </div>
+
     <div class="span9 profile-right-container">
       <div class="span12 title-container">
         <h2 class="pull-left">
@@ -58,35 +59,36 @@
         </div>
       </div>
       <div class="span12 nomarg separator"></div>
-      <div class="span12 nomarg title-container">
-        <h2 class="pull-left">
-          promotions.
-        </h2>
-      </div>
-      <div class="span12 nomarg profile-description">
-        <div id="productCarousel" class="carousel slide">
-          <ol class="carousel-indicators">
-            <li class="active" data-target="productCarousel" data-slide-to="0"></li>
-            <li data-target="productCarousel" data-slide-to="0"></li>
-            <li data-target="productCarousel" data-slide-to="1"></li>
-            <li data-target="productCarousel" data-slide-to="2"></li>
-          </ol>
-          <div class="carousel-inner">
-            <div class="item active" style="background: url('/assets/2.jpg') no-repeat center center; height: 300px">
-              <br/ >
-              <p>
-                Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum
-              </p>
-            </div>
-            <div class="item">
-              <%= image_tag "/assets/3.jpg" %>
-            </div>
-            <div class="item">
-              <%= image_tag "/assets/2.jpg" %>
-            </div>
+
+      <div class="row">
+        <div class="span4">
+          <div class="promotion">
+            <%= image_tag "/assets/noImage.jpg" %>
           </div>
-          <%= link_to "", "#productCarousel", data: {slide: "prev"}, class: "carousel-control left" %>
-          <%= link_to "", "#productCarousel", data: {slide: "next"}, class: "carousel-control right" %>
+          <p>
+            Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum
+            <%= link_to "readmore" , "javascript:void(0);" %>
+          </p>
+        </div>
+        <div class="span4">
+          <div class="promotion">
+            <%= image_tag "/assets/noImage.jpg" %>
+          </div>
+          <p>
+            Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum
+            <%= link_to "readmore" , "javascript:void(0);" %>
+          </p>
+        </div>
+        <div class="span4">
+          <div class="image-container span12">
+            <%= link_to image_tag "/assets/noImage.jpg" %>
+            <%= link_to image_tag "/assets/noImage.jpg" %>
+            <%= link_to image_tag "/assets/noImage.jpg" %>
+            <%= link_to image_tag "/assets/noImage.jpg" %>
+            <%= link_to image_tag "/assets/noImage.jpg" %>
+            <%= link_to image_tag "/assets/noImage.jpg" %>
+            <%= link_to image_tag "/assets/noImage.jpg" %>
+            <%= link_to image_tag "/assets/noImage.jpg" %>
         </div>
       </div>
     </div>
