@@ -41,7 +41,7 @@
       <div class="row">
         <div class="span8">
           <% @promotions.each do |promotion| %>
-            <div class="span6">
+            <div class="span6 nomarg">
               <div class="promotion">
                 <% if !promotion.image.blank? %>
                   <%= image_tag promotion.image %>
@@ -50,7 +50,7 @@
                 <% end %>
               </div>
               <p>
-                <%= promotion.description %>
+                <%= truncate(promotion.description, length: 150) %>
                 <%= link_to "readmore" , promotion_path(promotion.id) %>
               </p>
             </div>

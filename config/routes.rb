@@ -8,7 +8,9 @@ Enterprise::Application.routes.draw do
   devise_for :users
   ActiveAdmin.routes(self)
 
-  resources :galleries
+  resources :galleries do
+    get 'page/:page', :action => :index, :on => :collection
+  end
   resources :contacts
   resources :messages
   resources :products
