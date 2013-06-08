@@ -6,7 +6,7 @@
   <div class="content-container span12 nomarg">
     <div class="row-fluid">
       <div class="content-left-container span6 nomarg">
-        <%= form_for @message, url: contact_path, method: :post do |f| %>
+        <%= form_for @message, method: :post do |f| %>
 
         <% if @message.errors.any? %>
         <div class="alert">

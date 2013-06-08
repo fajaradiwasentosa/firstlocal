@@ -42,8 +42,8 @@ Enterprise::Application.configure do
     :address => "smtp.gmail.com",
     :port => 587,
     :domain => 'gmail.com',
-    :user_name => 'test-do-not-reply@41studio.com',
-    :password => 'Fd5(q"T,Q-Ov4[C',
+    :user_name => 'tesajamang@gmail.com',
+    :password => 'tesajamang18',
     :authentication => 'plain',
     :enable_starttls_auto => true }
 
