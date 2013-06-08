@@ -7,7 +7,7 @@
     <div class="row-fluid">
       <div class="content-left-container span6 nomarg">
         <%= form_for @message, url: contact_path, method: :post do |f| %>
-        
+
         <% if @message.errors.any? %>
         <div class="alert">
           <div class="error_messages">
@@ -20,7 +20,7 @@
           </div>
         </div>
         <% end %>
-        
+
         <div class="field">
           <%= f.label :name %><br />
           <%= f.text_field :name, placeholder: "your name please" %>
@@ -38,7 +38,7 @@
           <%= f.text_area :message, :rows => 4, placeholder: "your message please" %>
         </div>
         <div class="actions">
-          <%= f.submit "Send Message", class: "submit-message" %>
+          <%= f.submit "Send Message", class: "btn btn-primary submit-message" %>
         </div>
         <% end %>
       </div>
