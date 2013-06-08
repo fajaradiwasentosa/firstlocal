@@ -6,7 +6,7 @@
     li data-target="#myCarousel" data-slide-to="3"
   / Carousel items
   .carousel-inner
-    - if !@galleries.nil?
+    - unless @galleries.nil?
       - @galleries.each do |gallery|
         .item
           = image_tag gallery.image
@@ -112,10 +112,8 @@
                       = link_to "Chat Us", "javascript:void(0);"
                     .content-contact
                       .contact-detail
-                        = image_tag "/assets/social-balloon-yahoo-icon.png"
-                        a href="javascript:void(0);"
-                          p
-                            = @profile.email rescue nil
+                        a href="ymsgr:sendIM?madaarya"
+                          img src="http://opi.yahoo.com/online?u=madaarya&m=g&t=21&l=us" style="width: 150px"
                     .title-container
                       = image_tag "/assets/comment32.png"
                       = link_to "Testimonial", "javascript:void(0);"
