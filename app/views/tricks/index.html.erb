@@ -9,7 +9,7 @@
       <div class="trick-menu-container">
         <div class="content span12">
           <% @tricks.each do |trick| %>
-            <%= link_to trick.title, trick_path(tricj.id), class: "pull-left trick-link" %>
+            <%= link_to trick.title, trick_path(trick.id), class: "pull-left trick-link" %>
           <% end %>
         </div>
       </div>
