@@ -7,37 +7,39 @@
     <div class="row-fluid">
       <div class="content-left-container span6 nomarg">
         <%= form_for @message, url: contact_path, method: :post do |f| %>
-          <div class="alert">
-            <% if @message.errors.any? %>
-              <div class="error_messages">
-                <p><%= pluralize(@message.errors.count, "error") %> prohibited this message from being saved:</p>
-                <ul>
-                <% @message.errors.full_messages.each do |msg| %>
-                  <li><%= msg %></li>
-                <% end %>
-                </ul>
-              </div>
-            <% end %>
+        
+        <% if @message.errors.any? %>
+        <div class="alert">
+          <div class="error_messages">
+            <p><%= pluralize(@message.errors.count, "error") %> prohibited this message from being saved:</p>
+            <ul>
+              <% @message.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+              <% end %>
+            </ul>
           </div>
-          <div class="field">
-            <%= f.label :name %><br />
-            <%= f.text_field :name, placeholder: "your name please" %>
-          </div>
-          <div class="field">
-            <%= f.label :email %><br />
-            <%= f.text_field :email, placeholder: "your email please" %>
-          </div>
-          <div class="field">
-            <%= f.label :subject %><br />
-            <%= f.text_field :subject, placeholder: "your subject please" %>
-          </div>
-          <div class="field">
-            <%= f.label :message, "Message" %><br />
-            <%= f.text_area :message, :rows => 4, placeholder: "your message please" %>
-          </div>
-          <div class="actions">
-            <%= f.submit "Send Message", class: "submit-message" %>
-          </div>
+        </div>
+        <% end %>
+        
+        <div class="field">
+          <%= f.label :name %><br />
+          <%= f.text_field :name, placeholder: "your name please" %>
+        </div>
+        <div class="field">
+          <%= f.label :email %><br />
+          <%= f.text_field :email, placeholder: "your email please" %>
+        </div>
+        <div class="field">
+          <%= f.label :subject %><br />
+          <%= f.text_field :subject, placeholder: "your subject please" %>
+        </div>
+        <div class="field">
+          <%= f.label :message, "Message" %><br />
+          <%= f.text_area :message, :rows => 4, placeholder: "your message please" %>
+        </div>
+        <div class="actions">
+          <%= f.submit "Send Message", class: "submit-message" %>
+        </div>
         <% end %>
       </div>
       <div class="content-right-container">
