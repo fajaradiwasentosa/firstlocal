@@ -1,0 +1,108 @@
+<div class="span12 nomarg products-container">
+  <h1 class="title-container">Our Products</h1>
+  <div class="row-fluid">
+    <div class="span12 product-content">
+      <div class="row-fluid">
+        <div class="span3 product-left-container">
+          <% if !@product.image.blank? %>
+          <%= link_to product_path(@product.id) do %>
+          <%= image_tag @product.image %>
+          <% end %>
+          <% else %>
+          <%= link_to product_path(@product.id) do %>
+          <%= image_tag "/assets/noImage.jpg" %>
+          <% end %>
+          <% end %>
+        </div>
+        <div class="span9 product-right-container">
+          <h3 class="title-container">
+            <%= @product.name %>
+          </h3>
+          <p class="description">
+            <%= @product.description %>
+          </p>
+          <h4 class="title-container">Specifications</h4>
+          <div class="list-container">
+            <div class="list-content">
+              <div class="title">
+                Long
+              </div>
+              <div class="value">
+                <%= @product.long %>
+              </div>
+              <div class="unit">
+                mm
+              </div>
+            </div>
+            <div class="list-content">
+              <div class="title">
+                Width
+              </div>
+              <div class="value">
+                <%= @product.width %>
+              </div>
+              <div class="unit">
+                kg
+              </div>
+            </div>
+            <div class="list-content">
+              <div class="title">
+                Height
+              </div>
+              <div class="value">
+                <%= @product.height %>
+              </div>
+              <div class="unit">
+                mm
+              </div>
+            </div>
+            <div class="list-content">
+              <div class="title">
+                Block per Vallet
+              </div>
+              <div class="value">
+                <%= @product.block_per_vallet%>
+              </div>
+              <div class="unit">
+                block
+              </div>
+            </div>
+            <div class="list-content">
+              <div class="title">
+                Weight per Vallet
+              </div>
+              <div class="value">
+                <%= @product.weight_per_vallet %>
+              </div>
+              <div class="unit">
+                kg
+              </div>
+            </div>
+            <div class="list-content">
+              <div class="title">
+                Volume
+              </div>
+              <div class="value">
+                <%= @product.volume %>
+              </div>
+              <div class="unit">
+                block
+              </div>
+            </div>
+            <div class="list-content">
+              <div class="title">
+                Brick Wall
+              </div>
+              <div class="value">
+                <%= @product.brick_wall %>
+              </div>
+              <div class="unit">
+                m3
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

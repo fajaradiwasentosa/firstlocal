@@ -1,7 +1,9 @@
 <div class="span12 nomarg" id="profile-container">
   <div class="row-fluid">
     <div class="span3 profile-left-container">
-      <h3><%= @profile.name %></h3>
+      <% unless @profile.nil? %>
+        <h3><%= @profile.name %></h3>
+      <% end %>
     </div>
 
     <div class="span9 profile-right-container">
@@ -12,7 +14,9 @@
       </div>
       <div class="span12 nomarg profile-description">
         <p class="pull-left">
+        <% unless @profile.nil? %>
           <%= @profile.description %>
+        <% end %>
         </p>
       </div>
       <div class="span12 nomarg separator"></div>
@@ -26,7 +30,9 @@
           <%= image_tag "http://maps.googleapis.com/maps/api/staticmap?center=Cimahi,Indonesia&zoom=13&size=600x300&maptype=roadmap
   &markers=color:blue%7Clabel:S%7CCimahi,Indonesia&sensor=false" %>
           <p class="span6">
-            <%= @profile.location_description %>
+            <% unless @profile.nil? %>
+              <%= @profile.location_description %>
+            <% end %>
           </p>
         </div>
       </div>
@@ -35,7 +41,7 @@
       <div class="row">
         <div class="span8">
           <% @promotions.each do |promotion| %>
-            <div class="span6">
+            <div class="span6 nomarg">
               <div class="promotion">
                 <% if !promotion.image.blank? %>
                   <%= image_tag promotion.image %>
@@ -44,7 +50,7 @@
                 <% end %>
               </div>
               <p>
-                <%= promotion.description %>
+                <%= truncate(promotion.description, length: 150) %>
                 <%= link_to "readmore" , promotion_path(promotion.id) %>
               </p>
             </div>

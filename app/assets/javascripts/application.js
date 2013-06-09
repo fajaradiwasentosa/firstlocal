@@ -26,30 +26,29 @@
 //= require bootstrap-tooltip
 //= require bootstrap-transition
 //= require bootstrap-typeahead
-//= require bootstrap-typeahead
 //= require jquery.masonry.js
 
-$(".home").live("click", function(){
+$(".home").click(function(){
   $(".about-us, .trick, .order, .contact-us").removeClass("active");
   $(this).addClass("active");
 });
 
-$(".about-us").live("click", function(){
+$(".about-us").click(function(){
   $(".home, .trick, .order, .contact-us").removeClass("active");
   $(this).addClass("active");
 });
 
-$(".trick").live("click", function(){
+$(".trick").click(function(){
   $(".about-us, .home, .order, .contact-us").removeClass("active");
   $(this).addClass("active");
 });
 
-$(".order").live("click", function(){
+$(".order").click(function(){
   $(".about-us, .home, .trick, .contact-us").removeClass("active");
   $(this).addClass("active");
 });
 
-$(".contact-us").live("click", function(){
+$(".contact-us").click(function(){
   $(".about-us, .home, .order, .order").removeClass("active");
   $(this).addClass("active");
 });

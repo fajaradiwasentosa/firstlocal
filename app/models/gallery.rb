@@ -6,4 +6,6 @@ class Gallery < ActiveRecord::Base
 
   validates_presence_of :image
 
+  paginates_per 6
+
 end

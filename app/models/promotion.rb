@@ -4,4 +4,6 @@ class Promotion < ActiveRecord::Base
   attr_accessible :description, :image, :title
 
   validates_presence_of :title
+
+  paginates_per 6
 end
