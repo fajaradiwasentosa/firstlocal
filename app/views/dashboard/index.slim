@@ -117,20 +117,38 @@
                     .title-container
                       = image_tag "/assets/comment32.png"
                       = link_to "Testimonial", "javascript:void(0);"
-                    - unless @messages.nil?
-                      - @messages.each do |message|
-                        .content
+                    - unless @testimonials.nil?
+                      - @testimonials.each do |testimonial|
+                        #testimonial.content
                           .content-detail
                             .name
-                              = message.name
+                              = testimonial.name
                             .email
-                              = message.email
-                            p
-                              = message.message
+                              = testimonial.content
+                    .content-contact
+                      .contact-detail
+                        = link_to "create testimonal", "javascript:void(0);", class: "new-testimonial"
+                      .contact-detail.input-testimonial.hide
+                        = form_for @new_testimonial, url: admin_testimonials_path(@new_testimonial), html: { remote: true, class: "pull-left" } do |f|
+                          .title.pull-left style="width: 100%;"
+                            = f.label :name
+                          .content-input.pull-left style="width: 100%;"
+                            = f.text_field :name
+                          .title.pull-left style="width: 100%;"
+                            = f.label :message
+                          .content-input.pull-left style="width: 100%;"
+                            = f.text_area :content, rows: "5", style: "resize: none;"
+                          .testimonial-loader.pull-left.hide style="width: 100%; margin-bottom: 15px;"
+                              = image_tag "/assets/ajax-loader-bar.gif", style: "width: 30%;"
+                          .content-action.pull-left style="width: 100%;"
+                            .btn-group
+                              = link_to "create", "javascript:void(0);", class: "btn btn-small submit-testimonial-temp"
+                              = link_to "cancel", "javascript:void(0);", class: "btn btn-small btn-danger cancel-testimonial"
+                          = f.submit "create", class: "submit-testimonial hide"
+                          button type="reset" class="reset-testimonial hide"
 
 = content_for :javascript_contents do
-  script src="/assets/bootstrap-carousel"
-  script src="/assets/dashboard"
+  = javascript_include_tag "dashboard"
 
 
 

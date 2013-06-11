@@ -53,6 +53,7 @@ $(".contact-us").click(function(){
   $(this).addClass("active");
 });
 
+
 !function ($) {
 
   $(function(){

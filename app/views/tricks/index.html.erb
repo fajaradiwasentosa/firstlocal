@@ -26,7 +26,7 @@
           </div>
           <div class="right-container">
             <h5 class="title"><%= trick.title %></h5>
-            <div class="date">distance_of_time_in_words(trick.created_at)</div>
+            <div class="date"><%= distance_of_time_in_words(trick.created_at) %></div>
             <div class="description">
               <p>
                 <%= trick.description %>

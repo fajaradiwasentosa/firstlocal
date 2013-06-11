@@ -1,11 +1,19 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
-
 $(document).ready ->
-
   $('.child-menu').click ->
     $('.nav-collapse2').removeClass 'hide'
 
   $(".carousel").carousel ->
     inteval: 5000
+
+  $('.new-testimonial').click ->
+    $(this).hide()
+    $('.input-testimonial').fadeIn()
+
+  $('.cancel-testimonial').click ->
+    $('.reset-testimonial').click()
+    $('.input-testimonial').hide()
+    $('.new-testimonial').fadeIn()
+
+  $('.submit-testimonial-temp').click ->
+    $('.submit-testimonial').click()
+    $('.testimonial-loader').show()

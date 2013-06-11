@@ -1,5 +1,7 @@
 Enterprise::Application.routes.draw do
 
+  get "testimonials/index"
+
   get "promotions/index"
 
   devise_for :admin_users, ActiveAdmin::Devise.config

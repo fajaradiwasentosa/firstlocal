@@ -1,0 +1,4 @@
+$('.input-testimonial').hide();
+$('.testimonial-loader').hide();
+$('.new-testimonial').fadeIn();
+$("#testimonial").prepend("<%=j render "dashboard/new_testimonial" object: @testimonial %>")
