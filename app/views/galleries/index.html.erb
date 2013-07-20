@@ -14,6 +14,11 @@
           <% end %>
         </div>
         <%= render "modal_gallery", gallery: gallery %>
+        <script type="text/javascript">
+        $("#images-<%= gallery.id %>").click(function(){
+          $("#image-<%= gallery.id %>").modal("toggle");
+        });
+        </script>
       <% end %>
     <% end %>
   </div>
@@ -24,21 +29,15 @@
 
 <script type="text/javascript">
 $(document).ready(function(){
-  $("#images-"+$(".image").attr("id")).click(function(){
-    $("#image-"+$(".image").attr("id")).modal("toggle");
-  });
-
-  $(function(){
-    $('#gallery-container').masonry({
-      // options
-      itemSelector: ".gallery-content",
-      isAnimated: true,
-      animationOptions: {
-        duration: 750,
-        easing: 'linear',
-        queue: false
-      }
-    });
+  $('#gallery-container').masonry({
+    // options
+    itemSelector: ".gallery-content",
+    isAnimated: true,
+    animationOptions: {
+      duration: 750,
+      easing: 'linear',
+      queue: false
+    }
   });
 });
 </script>
