@@ -1,0 +1,19 @@
+DOCTYPE  html
+html
+	head
+	  title Pratamapolykem
+	  = stylesheet_link_tag    "application", :media => "all"
+	  = javascript_include_tag "application"
+	  = csrf_meta_tags
+	body
+		.navbar.navbar-static-top.header-container data-spy="affix" data-offset-top="200"
+			.container
+				button.navbar-toggle type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse"
+					span.icon-bar
+					span.icon-bar
+					span.icon-bar
+				a.navbar-brand href="javascript:void(0);" Brand
+				.nav.navbar-nav.nav-collapse.collapse.navbar-responsive-collapse
+					ul.nav.navbar-nav
+						li.active: a[href="javascript:void(0);"] Home
+		= yield
