@@ -1,5 +1,6 @@
 Pratamapolykem::Application.routes.draw do
-  get "dashboard/index"
+
+  get "product/index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -50,6 +51,12 @@ Pratamapolykem::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
+
+  get "/dashboard" => "dashboard#index", as: :dashboard  
+  get "/company_profile" => "company_profile#index", as: :profile  
+  get "/gallery" => "gallery#index", as: :gallery  
+  get "/tipsandtricks" => "tip_trick#index", as: :tip_and_trick  
+  get "/contactus" => "contact_us#index", as: :contact_us  
   root :to => 'dashboard#index'
 
   # See how all your routes lay out with "rake routes"

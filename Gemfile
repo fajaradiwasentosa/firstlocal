@@ -21,14 +21,19 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-group :productins do
+group :production do
+end
+
+group :development do
 	gem 'better_errors'
+	gem 'pry'
 end
 
 gem 'jquery-rails'
 gem 'less-rails'
 gem 'slim-rails'
 gem 'thin'
+gem 'carrierwave'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
