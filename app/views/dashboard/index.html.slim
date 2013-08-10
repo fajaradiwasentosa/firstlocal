@@ -1,29 +1,24 @@
-.container.fill
-	.left-main-container.col-lg-4
-		.logo
-			p.brand Pratama Polykem 
-			
-	.right-main-container.col-lg-8
-		#carousel-example-generic.carousel.slide
-			ol.carousel-indicators
-				li.active data-target="#carousel-example-generic" data-slide-to="0"
-				li data-target="#carousel-example-generic" data-slide-to="1"
-				li data-target="#carousel-example-generic" data-slide-to="2"
-			.carousel-inner
-				.item.active
-					= image_tag "/assets/1.jpg"
-					.carousel-caption
-						p Lorem ipsum dipsum
-				.item
-					= image_tag "/assets/2.jpg"
-					.carousel-caption
-						p Lorem ipsum dipsum
-			= link_to "#carousel-example-generic", class: "left carousel-control", "data-slide"=>"prev" do
-				span.icon-prev
-			= link_to "#carousel-example-generic", class: "right carousel-control", "data-slide"=>"next" do
-				span.icon-next
+.container-fluid
+  .container.fill
+    #carousel-example-generic.carousel.slide
+      ol.carousel-indicators
+        li.active data-target="#carousel-example-generic" data-slide-to="0"
+        li data-target="#carousel-example-generic" data-slide-to="1"
+        li data-target="#carousel-example-generic" data-slide-to="2"
+      .carousel-inner
+        .item.active
+          = image_tag "/assets/1.jpg"
+          .carousel-caption
+            p Lorem ipsum dipsum
+        .item
+          = image_tag "/assets/2.jpg"
+          .carousel-caption
+            p Lorem ipsum dipsum
+      = link_to "#carousel-example-generic", class: "left carousel-control", "data-slide"=>"prev" do
+        span.icon-prev
+      = link_to "#carousel-example-generic", class: "right carousel-control", "data-slide"=>"next" do
+        span.icon-next
+    .
 
-javascript:
-	$(document).ready(function(){
-		$('.carousel').carousel();
-	});
+= content_for :javascript_contents do
+  = javascript_include_tag "dashboard"

@@ -3,7 +3,9 @@ html
 	head
 	  title Pratamapolykem
 	  = stylesheet_link_tag    "application", :media => "all"
+	  = yield :stylesheet_contents
 	  = javascript_include_tag "application"
+	  = yield :javascript_contents
 	  = csrf_meta_tags
 	body
 		.navbar.navbar-static-top.header-container data-spy="affix" data-offset-top="200"
@@ -12,8 +14,21 @@ html
 					span.icon-bar
 					span.icon-bar
 					span.icon-bar
-				a.navbar-brand href="javascript:void(0);" Brand
+				.logo
+					- if !@profile.nil?
+						p.navbar-brand= @profile.name.titleize
+					- else 
+						= link_to "Corporate Name", dashboard_path, class: "navbar-brand" 
 				.nav.navbar-nav.nav-collapse.collapse.navbar-responsive-collapse
 					ul.nav.navbar-nav
-						li.active: a[href="javascript:void(0);"] Home
+						li.home
+							= link_to "Home", dashboard_path, class: "home"
+						li.profile
+							= link_to "Company Profile", profile_path, class: "profile"
+						li.gallery
+							= link_to "Gallery", gallery_path, class: "gallery"
+						li.trick
+							= link_to "Tips and Tricks", tip_and_trick_path, class: "trick"
+						li.contact
+							= link_to "Contact Us", contact_us_path, class: "contact"
 		= yield

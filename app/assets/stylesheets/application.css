@@ -10,5 +10,9 @@
  *
  *= require_self
  *= require bootstrap
- *= require_tree .
+ *= require core
+ *= require font-awesome
+ *= require font-awesome-ie7
+ *= require global
+ *= require dashboard
  */

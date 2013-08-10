@@ -1,3 +1,9 @@
+@import url(http://fonts.googleapis.com/css?family=Armata&subset=latin,latin-ext);
+
+body {
+	font-family: 'Armata', sans-serif;
+}
+
 .header-container {
 	background-color: rgb(92, 87, 70);
 	margin-bottom: 0;
@@ -6,10 +12,45 @@
 	}
 	.active > a {
 		background-color: rgb(75, 74, 58);
-		color: rgb(124, 119, 80);
+		color: rgb(213, 195, 55);
 		&:hover {
 			background-color: rgb(109, 97, 65);
-			color: rgb(255, 255, 255);
+			color: rgb(213, 195, 55);
 		} 
+	}
+}
+
+.navbar-nav {
+	li {
+		a {
+			color: #fff;
+			&:hover {
+				background-color: rgb(109, 97, 65);
+				color: rgb(213, 195, 55);
+			}
+		}
+	}
+}
+
+.navbar-brand {
+	max-width: none;
+	margin-left: 10px;
+	margin-bottom: 0;
+}
+
+.brand {
+	float: left;
+	width: 30px;
+	margin-top: 8px;
+}
+
+.logo {
+	text-align: center;
+	width: 100%;
+	.title {
+		font-size: 27px;
+		font-weight: bold;
+		margin: 10px 0 0 0;
+		line-height: 33px;
 	}
 }
