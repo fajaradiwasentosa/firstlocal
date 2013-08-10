@@ -8,7 +8,7 @@ html
 	  = yield :javascript_contents
 	  = csrf_meta_tags
 	body
-		.navbar.navbar-static-top.header-container data-spy="affix" data-offset-top="200"
+		.navbar.navbar-fixed-top.header-container
 			.container
 				button.navbar-toggle type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse"
 					span.icon-bar
@@ -19,12 +19,14 @@ html
 						p.navbar-brand= @profile.name.titleize
 					- else 
 						= link_to "Corporate Name", dashboard_path, class: "navbar-brand" 
-				.nav.navbar-nav.nav-collapse.collapse.navbar-responsive-collapse
+				.nav.navbar-nav.nav-collapse.collapse.navbar-responsive-collapse.nav-collapse-scrollable
 					ul.nav.navbar-nav
 						li.home
 							= link_to "Home", dashboard_path, class: "home"
 						li.profile
 							= link_to "Company Profile", profile_path, class: "profile"
+						li.product
+							= link_to "Products", product_path, class: "product"
 						li.gallery
 							= link_to "Gallery", gallery_path, class: "gallery"
 						li.trick

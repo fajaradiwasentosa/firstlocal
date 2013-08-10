@@ -57,6 +57,7 @@ Pratamapolykem::Application.routes.draw do
   get "/gallery" => "gallery#index", as: :gallery  
   get "/tipsandtricks" => "tip_trick#index", as: :tip_and_trick  
   get "/contactus" => "contact_us#index", as: :contact_us  
+  get "/product" => "product#index", as: :product  
   root :to => 'dashboard#index'
 
   # See how all your routes lay out with "rake routes"
