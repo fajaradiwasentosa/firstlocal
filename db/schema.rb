@@ -11,7 +11,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130809065119) do
+ActiveRecord::Schema.define(:version => 20130811131446) do
+
+  create_table "exelences", :force => true do |t|
+    t.string   "title"
+    t.string   "image"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "galleries", :force => true do |t|
+    t.string   "image"
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "pratama_profiles", :force => true do |t|
     t.string   "logo"
@@ -22,6 +38,15 @@ ActiveRecord::Schema.define(:version => 20130809065119) do
     t.string   "email"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "tip_tricks", :force => true do |t|
+    t.string   "image"
+    t.string   "title"
+    t.string   "author"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
 end

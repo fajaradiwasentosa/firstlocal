@@ -1,4 +1,35 @@
-h1 CompanyProfile#index
-p Find me in app/views/company_profile/index.html.slim
+.container.marg-t-70
+	.col-lg-12
+		.row
+			.col-lg-4.col-lg-push-8
+				.col-lg-12.text-center
+					= image_tag "/assets/pratama_logo.png", class: "width-100 pad-top-30"
+				.col-lg-12.text-center
+					h3.pad-top-20 
+						b PT. GEMILANG PRATAMA POLYKEM
+				.col-lg-12.text-left
+					.panel.marg-t-20
+						.panel-heading
+							h4
+								b.pul-left Information
+			.col-lg-8.col-lg-push-4
+				legend
+					h2 About
+				p.text-color.marg-t-5.text-left Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum.
+				legend
+					h2 Our Products
+				ul.list-inline.text-center
+					li.media
+					  = link_to image_tag("/assets/no_image.jpg", class: "img-responsive"), gallery_path
+					li.media
+					  = link_to image_tag("/assets/no_image.jpg", class: "img-responsive"), gallery_path
+					li.media
+					  = link_to image_tag("/assets/no_image.jpg", class: "img-responsive"), gallery_path
+					li.media
+					  = link_to image_tag("/assets/no_image.jpg", class: "img-responsive"), gallery_path
+					li.media
+					  = link_to image_tag("/assets/no_image.jpg", class: "img-responsive"), gallery_path
+					li.media
+					  = link_to image_tag("/assets/no_image.jpg", class: "img-responsive"), gallery_path
 = content_for :javascript_contents do
   = javascript_include_tag "company_profile"

@@ -12,7 +12,7 @@ gem 'pg'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  # gem 'sass-rails',   '~> 3.2.3'
+  gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'therubyracer', :platforms => :ruby
 
@@ -34,6 +34,10 @@ gem 'less-rails'
 gem 'slim-rails'
 gem 'thin'
 gem 'carrierwave'
+gem 'kaminari'
+gem 'bootstrap-kaminari-views'
+gem 'activeadmin'
+gem "meta_search",    '>= 1.1.0.pre'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

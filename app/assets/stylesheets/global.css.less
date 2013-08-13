@@ -36,31 +36,126 @@ body {
 	margin-top: 0;
 }
 
-.brand-color {
-	color: @brandColor;
-}
+.bg-brand-color { background-color: @brandColor; }
+.bg-child-brand-color { background-color: rgb(213, 195, 55); }
+.brand-color { color: @brandColor; }
+.title-color { color: rgb(213, 195, 55); }
+.red-color {	color: red; }
+.text-color {	color: @gray; }
+.white { color: white; }
 
+.armata {	font-family: 'Armata'; }
+.no-border { border: none; }
+.no-background { background: none; }
+
+// SIZE
+.width-7p { width: 7%; }
+.width-10p { width: 10%; }
 .width-20p { width: 20%; }
+.width-27p { width: 27%; }
+.width-40p { width: 40%; }
 .width-65p { width: 65%; }
 .width-100p { width: 100%; }
+// Pixel
+.width-20 { width: 20px; }
+.width-32 { width: 32px; }
+.width-100 { width: 100px; }
+.width-300 { width: 300px; }
+// Padding
+// left
 .pad-left-30 { padding-left: 30px; }
+// top
+.pad-top-30 { padding-top: 30px; }
+.pad-top-9 { padding-top: 9px; }
+// bottom
+.pad-bottom-10 { padding-bottom: 10px; }
+.pad-bottom-20 { padding-bottom: 20px; }
+
+
+// Margin
+// top
+.marg-t-5 { margin-top: 5px } 
+.marg-t-7 { margin-top: 7px } 
+.marg-t-10 { margin-top: 10px } 
+.marg-t-20 { margin-top: 20px } 
+.marg-t-50 { margin-top: 50px } 
+.marg-t-70 { margin-top: 70px } 
+// right
+.marg-r-5 { margin-right: 5px; }
+.marg-r-10 { margin-right: 10px; }
+// vertical
+.marg-v-15 { margin: 15px 0; }
+
+
+// Opacity
+.transparant-50 {
+	opacity: 0.5;
+}
+
+
 
 // CUSTOM
+
+.navbar-nav > li > a {
+	padding-top: 26px;
+	padding-bottom: 22px;
+	font-size: 12px;
+}
+
 .header-container {
 	background-color: rgb(92, 87, 70);
 	margin-bottom: 0;
 	.navbar-brand {
 		color: #fff;
 	}
-	.active > a {
+	.active > a, .navbar-nav > .open > a {
 		background-color: rgb(75, 74, 58);
-		color: rgb(213, 195, 55);
+		font-size: 12px;
 		&:hover {
 			background-color: rgb(109, 97, 65);
 			color: rgb(213, 195, 55);
 		} 
 	}
 }
+
+.active {
+	color: rgb(213, 195, 55) !important;
+}
+
+.nav {
+	.caret {
+		margin-left: 10px;
+		border-top-color: #fff;
+		border-bottom-color: #fff;
+		&:hover {
+			border-top-color: #fff;
+		} 
+	}
+}
+
+.dropdown-menu {
+	background-color: @brandColor;
+	li {
+		a {
+			&:hover{
+				background: rgb(109, 97, 65);
+				color: rgb(213, 195, 55);
+			}
+		}
+		&:hover{
+			background: rgb(109, 97, 65);
+			color: rgb(213, 195, 55);
+		}
+	}
+}
+
+.header-child-container {
+	margin-top: 50px;
+	padding: 20px 0;
+	.main-logo {
+		width: 100px;
+	}
+} 
 
 .navbar-nav {
 	li {
@@ -85,18 +180,43 @@ body {
 	margin-top: 8px;
 }
 
-.logo {
-	text-align: center;
-	width: 100%;
-	.title {
-		font-size: 27px;
-		font-weight: bold;
-		margin: 10px 0 0 0;
-		line-height: 33px;
+.copyright {
+	font-size: 12px;
+	padding-top: 10px;
+}
+
+.information-container {
+	.marg-t-50;
+	padding-top: 20px;
+	padding-bottom: 10px;
+	border-bottom: solid 1px #dedede;
+	border-top: solid 1px #dedede;
+	.information {
+		font-size: 12px;
+		margin-bottom: 5px;
+		.item-information {
+			margin-right: 10px;
+			padding-bottom: 5px;
+		}
 	}
 }
 
-.icon-testi {
-	width: 14%;
-	margin-top: 1px;
+#footer {
+	background-color: none;
+	.container {
+		.list-inline {
+			.list-inline-item {
+				a {
+					float: left;
+					font-size: 12px;
+					padding: 10px 5px;
+					color: #999;
+					text-decoration: none;
+					&:hover {
+						color: rgb(213, 195, 55);
+					}
+				}
+			}
+		}
+	}
 }
