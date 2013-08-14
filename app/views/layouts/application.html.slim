@@ -15,14 +15,14 @@ html
 					span.icon-bar
 					span.icon-bar
 				.logo.armata
-					- if !@profile.nil?
-						= link_to dashboard_path, class: "navbar-brand" do
-							= image_tag "/assets/pratama_logo.png", class: "width-32 marg-r-10"
-							= @profile.name.titleize
-					- else 
-						= link_to dashboard_path, class: "navbar-brand" do
-							= image_tag "/assets/pratama_logo.png", class: "width-32 marg-r-10"
-							= "Corporate Name"
+					/ - if !@profile.nil?
+					/ 	= link_to dashboard_path, class: "navbar-brand" do
+					/ 		= image_tag "/assets/pratama_logo.png", class: "width-32 marg-r-10"
+					/ 		= @profile.name.titleize
+					/ - else 
+					/ 	= link_to dashboard_path, class: "navbar-brand" do
+					/ 		= image_tag "/assets/pratama_logo.png", class: "width-32 marg-r-10"
+					/ 		= "Corporate Name"
 				.nav.navbar-nav.nav-collapse.collapse.navbar-responsive-collapse.nav-collapse-scrollable
 					ul.nav.navbar-nav
 						li.home

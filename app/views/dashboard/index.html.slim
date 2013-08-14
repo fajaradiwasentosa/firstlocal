@@ -111,8 +111,10 @@
         legend
           h1.armata.brand-color.text-shadow Gallery
         ul.list-inline.text-center.bg-white.border-normal.pad-bottom-20
-          li.media
-            = link_to image_tag("/assets/no_image.jpg", class: "img-responsive"), gallery_path
+          li.media.pratama-product
+            = link_to gallery_path do
+              = image_tag("/assets/no_image.jpg", class: "img-responsive")
+              = image_tag("/assets/eye.svg", class: "image-view")
           li.media
             = link_to image_tag("/assets/no_image.jpg", class: "img-responsive"), gallery_path
           li.media
