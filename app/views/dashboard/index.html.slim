@@ -6,15 +6,7 @@
       li data-target="#carousel-example-generic" data-slide-to="2"
     .carousel-inner
       .item.active
-        = image_tag "/assets/1.jpg"
-        .carousel-caption
-          p Lorem ipsum dipsum
-      .item
         = image_tag "/assets/2.jpg"
-        .carousel-caption
-          p Lorem ipsum dipsum
-      .item
-        = image_tag "/assets/5.jpg"
         .carousel-caption
           p Lorem ipsum dipsum
     = link_to "#carousel-example-generic", class: "left carousel-control", "data-slide"=>"prev" do
@@ -117,8 +109,8 @@
               = link_to "more", "javascript:void(0);", class: "brand-color"
       .col-lg-12
         legend
-          h2.armata.brand-color Gallery
-        ul.list-inline.text-center
+          h1.armata.brand-color.text-shadow Gallery
+        ul.list-inline.text-center.bg-white.border-normal.pad-bottom-20
           li.media
             = link_to image_tag("/assets/no_image.jpg", class: "img-responsive"), gallery_path
           li.media
