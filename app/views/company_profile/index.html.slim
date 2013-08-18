@@ -65,18 +65,42 @@
 				p.text-color.marg-t-5.text-center.font12 Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum.
 				legend
 					h2.armata Our Products
-				ul.list-inline.text-center
-					li.media
-					  = link_to image_tag("/assets/no_image.jpg", class: "img-responsive"), gallery_path
-					li.media
-					  = link_to image_tag("/assets/no_image.jpg", class: "img-responsive"), gallery_path
-					li.media
-					  = link_to image_tag("/assets/no_image.jpg", class: "img-responsive"), gallery_path
-					li.media
-					  = link_to image_tag("/assets/no_image.jpg", class: "img-responsive"), gallery_path
-					li.media
-					  = link_to image_tag("/assets/no_image.jpg", class: "img-responsive"), gallery_path
-					li.media
-					  = link_to image_tag("/assets/no_image.jpg", class: "img-responsive"), gallery_path
+				ul.list-inline.text-center.bg-white.border-normal.pad-bottom-20
+					li.media.pratama-product
+					  = link_to gallery_path do
+					    = image_tag("/assets/no_image.jpg", class: "img-responsive")
+					    .image-view
+					      = image_tag("/assets/search.png")
+					      p.marg-t-10.white view
+					li.media.pratama-product
+					  = link_to gallery_path do
+					    = image_tag("/assets/no_image.jpg", class: "img-responsive")
+					    .image-view
+					      = image_tag("/assets/search.png")
+					      p.marg-t-10.white view
+					li.media.pratama-product
+					  = link_to gallery_path do
+					    = image_tag("/assets/no_image.jpg", class: "img-responsive")
+					    .image-view
+					      = image_tag("/assets/search.png")
+					      p.marg-t-10.white view
+					li.media.pratama-product
+					  = link_to gallery_path do
+					    = image_tag("/assets/no_image.jpg", class: "img-responsive")
+					    .image-view
+					      = image_tag("/assets/search.png")
+					      p.marg-t-10.white view
+					li.media.pratama-product
+					  = link_to gallery_path do
+					    = image_tag("/assets/no_image.jpg", class: "img-responsive")
+					    .image-view
+					      = image_tag("/assets/search.png")
+					      p.marg-t-10.white view
+					li.media.pratama-product
+					  = link_to gallery_path do
+					    = image_tag("/assets/no_image.jpg", class: "img-responsive")
+					    .image-view
+					      = image_tag("/assets/search.png")
+					      p.marg-t-10.white view
 = content_for :javascript_contents do
   = javascript_include_tag "company_profile"

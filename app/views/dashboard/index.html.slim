@@ -6,7 +6,15 @@
       li data-target="#carousel-example-generic" data-slide-to="2"
     .carousel-inner
       .item.active
-        = image_tag "/assets/2.jpg"
+        = link_to image_tag("/assets/2.jpg")
+        .carousel-caption
+          p Lorem ipsum dipsum
+      .item
+        = link_to image_tag("/assets/2.jpg")
+        .carousel-caption
+          p Lorem ipsum dipsum
+      .item
+        = link_to image_tag("/assets/2.jpg")
         .carousel-caption
           p Lorem ipsum dipsum
     = link_to "#carousel-example-generic", class: "left carousel-control", "data-slide"=>"prev" do
@@ -114,16 +122,39 @@
           li.media.pratama-product
             = link_to gallery_path do
               = image_tag("/assets/no_image.jpg", class: "img-responsive")
-              = image_tag("/assets/eye.svg", class: "image-view")
-          li.media
-            = link_to image_tag("/assets/no_image.jpg", class: "img-responsive"), gallery_path
-          li.media
-            = link_to image_tag("/assets/no_image.jpg", class: "img-responsive"), gallery_path
-          li.media
-            = link_to image_tag("/assets/no_image.jpg", class: "img-responsive"), gallery_path
-          li.media
-            = link_to image_tag("/assets/no_image.jpg", class: "img-responsive"), gallery_path
-          li.media
-            = link_to image_tag("/assets/no_image.jpg", class: "img-responsive"), gallery_path
+              .image-view
+                = image_tag("/assets/search.png")
+                p.marg-t-10.white view
+          li.media.pratama-product
+            = link_to gallery_path do
+              = image_tag("/assets/no_image.jpg", class: "img-responsive")
+              .image-view
+                = image_tag("/assets/search.png")
+                p.marg-t-10.white view
+          li.media.pratama-product
+            = link_to gallery_path do
+              = image_tag("/assets/no_image.jpg", class: "img-responsive")
+              .image-view
+                = image_tag("/assets/search.png")
+                p.marg-t-10.white view
+          li.media.pratama-product
+            = link_to gallery_path do
+              = image_tag("/assets/no_image.jpg", class: "img-responsive")
+              .image-view
+                = image_tag("/assets/search.png")
+                p.marg-t-10.white view
+          li.media.pratama-product
+            = link_to gallery_path do
+              = image_tag("/assets/no_image.jpg", class: "img-responsive")
+              .image-view
+                = image_tag("/assets/search.png")
+                p.marg-t-10.white view
+          li.media.pratama-product
+            = link_to gallery_path do
+              = image_tag("/assets/no_image.jpg", class: "img-responsive")
+              .image-view
+                = image_tag("/assets/search.png")
+                p.marg-t-10.white view   
+
 = content_for :javascript_contents do
   = javascript_include_tag "dashboard"

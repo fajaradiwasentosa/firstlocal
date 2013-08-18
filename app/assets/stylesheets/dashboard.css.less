@@ -1,15 +1,21 @@
 .image-view {
 	position: absolute;
 	z-index: 1;
-	margin-left: -200px;
-	margin-top: 83px;
+	margin-top: -225px;
 	text-align: center;
-	width: 100px;
+	width: 300px;
+	height: 225px;
+	background-color: #666;
 	opacity: 0;
-	transition:opacity 1s;
-	-webkit-transition:width .5s, height .5s, -webkit-transform .5s;
+	img {
+		margin-top: 85px;
+	}
 	&:hover {
-		opacity: 1;
+		-webkit-transition: all .5s ease-in-out;
+		-moz-transition: all .5s ease-in-out;
+		-o-transition: all .5s ease-in-out;
+		transition: all .5s ease-in-out;
+		opacity: .5;
 	}
 }
 
