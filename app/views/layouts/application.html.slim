@@ -2,6 +2,7 @@ DOCTYPE  html
 html
 	head
 	  title Pratamapolykem
+	  meta content="67b4cf6060cb0e01-573f462cc134cfd9-g8e85acc3927937c8-13" name="google-translate-customization"
 	  = stylesheet_link_tag    "application", :media => "all"
 	  = yield :stylesheet_contents
 	  = javascript_include_tag "application"
@@ -52,6 +53,8 @@ html
 							= link_to "Contact Us", contact_us_path, class: "contact"
 						li.testimonial
 							= link_to "Testimonial", "javascript:void(0);", class: "testimonial"
+						li.translate
+							#google_translate_element
 		= yield
 		.col-lg-12
 			#footer.container-fluid.text-center
@@ -99,3 +102,8 @@ html
 							= link_to "Testimonials", "javascript:void(0);"
 					.col-lg-12.copyright.text-center.marg-v-15
 						p.label.label-default copyright &copy; Pratama Polykem 2013
+		javascript:
+		   	function googleTranslateElementInit() {
+		    	new google.translate.TranslateElement({includedLanguages: 'en,id'}, 'google_translate_element');
+		  	}
+		script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript"
