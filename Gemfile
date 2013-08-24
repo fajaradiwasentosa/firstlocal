@@ -29,14 +29,18 @@ group :development do
 	gem 'pry'
 end
 
-gem 'jquery-rails'
+gem 'jquery-rails', '~> 2.3.0'
+gem "jquery-ui-rails"
 gem 'less-rails'
 gem 'slim-rails'
 gem 'thin'
+gem "ckeditor"
 gem 'carrierwave'
+gem "mini_magick"
 gem 'kaminari'
 gem 'bootstrap-kaminari-views'
-gem 'activeadmin'
+# gem 'activeadmin'
+gem 'activeadmin', :git => "git@github.com:kars7e/active_admin.git"
 gem "meta_search",    '>= 1.1.0.pre'
 
 # To use ActiveModel has_secure_password

@@ -1,0 +1,18 @@
+p#notice = notice
+
+p
+  strong Title:
+  = @carrier.title
+p
+  strong Expired date:
+  = @carrier.expired_date
+p
+  strong Basic carrier:
+  = @carrier.basic_carrier
+p
+  strong Requirement:
+  = @carrier.requirement
+
+= link_to 'Edit', edit_carrier_path(@carrier)
+'|
+= link_to 'Back', carriers_path
