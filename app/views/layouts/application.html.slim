@@ -53,8 +53,11 @@ html
 							= link_to "Contact Us", contact_us_path, class: "contact"
 						li.testimonial
 							= link_to "Testimonial", "javascript:void(0);", class: "testimonial"
-						li.translate
-							#google_translate_element
+						li.translation-links
+							.translation-icons style="visibility:hidden"
+							  a.eng data-placement="0" href="#" british flag  
+							  a.id data-placement="1" href="#" indonesia flag
+							#google_translate_element style="display:none"
 		= yield
 		.col-lg-12
 			#footer.container-fluid.text-center
@@ -104,6 +107,31 @@ html
 						p.label.label-default copyright &copy; Pratama Polykem 2013
 		javascript:
 		   	function googleTranslateElementInit() {
-		    	new google.translate.TranslateElement({includedLanguages: 'en,id'}, 'google_translate_element');
+		    	new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'en,id', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false}, 'google_translate_element');
 		  	}
+
+		  	$(window).load(function () {
+
+    			$('.translation-icons').css('visibility', 'visible');
+        	$('.translation-icons a').click(function(e) {
+            e.preventDefault();
+            var placement = $(this).data('placement');
+            var lang_num = $('.translation-icons a').length;
+            var $frame = $('.goog-te-menu-frame:first');
+
+            if (!$frame.size()) {
+                alert("Error: Could not find Google translate frame.");
+                return false;
+            }
+
+            var langs = $('.goog-te-menu-frame:first').contents().find('a span.text');
+
+            if(langs.length != lang_num) placement = placement+1;
+            $(".skiptranslate").hide();
+
+            langs.eq(placement).click();
+            return false;
+        	});
+				});
+
 		script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript"

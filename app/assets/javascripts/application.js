@@ -16,5 +16,6 @@
 //= require bootstrap
 
 $(document).ready(function(){
+	$(".skiptranslate").hide();
 	$(".information").tooltip();
 });
