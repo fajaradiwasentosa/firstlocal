@@ -1,4 +1,24 @@
-h1 Gallery#index
-p Find me in app/views/gallery/index.html.slim
+= content_for :stylesheet_contents do
+  = stylesheet_link_tag "gallery"
+.container.marg-t-50
+  .col-lg-12
+    .row
+      .col-lg-9.col-lg-push-3
+        ul.list-group
+          li.list-group-item.gallery-item
+            .row
+              .col-lg-8.col-lg-push-4.pratama-gallery-album
+                = image_tag "mosaic.jpg", class: "width-100p pratama-album-cover"
+                .show-large-image-view.text-center.hide
+                  = link_to "javacript:void(0);" do
+                    = image_tag "search.png", class: "width-10p"
+                    p view image
+              .col-lg-4.col-lg-push-8.text-center.pratama-gallery-information
+                h3.brand-color.text-left Title
+                p.font10.text-left created at
+                p.font12 Lorem ipsum dipsum lorem ipsum dipsum lorem ipsum dipsum lorem ipsum dipsum lorem ipsum dipsum lorem ipsum dipsum lorem ipsum dipsum lorem ipsum dipsum.
+                .show-image-view.hide
+                  = link_to image_tag("search_black.png", class: "transparant-3 width-25"), "javacript:void(0);"
+      .col-lg-3.col-lg-push-9
 = content_for :javascript_contents do
   = javascript_include_tag "gallery"
