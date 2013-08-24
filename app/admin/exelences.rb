@@ -26,7 +26,11 @@ ActiveAdmin.register Exelence do
   form(:html => { :multipart => true }) do |f|
     f.inputs do
       f.input :title
-      f.input :image, :as => :file, :hint => f.template.image_tag(f.object.image.url)
+      if !f.object.new_record?
+        f.input :image, :as => :file, :hint => f.template.image_tag(f.object.image.url)
+      else
+        f.input :image, :as => :file
+      end
       f.input :description, :as => :ckeditor
     end
     f.buttons
