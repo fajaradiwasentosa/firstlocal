@@ -39,8 +39,7 @@ gem 'carrierwave'
 gem "mini_magick"
 gem 'kaminari'
 gem 'bootstrap-kaminari-views'
-# gem 'activeadmin'
-gem 'activeadmin', :git => "git@github.com:kars7e/active_admin.git"
+gem 'activeadmin'
 gem "meta_search",    '>= 1.1.0.pre'
 
 # To use ActiveModel has_secure_password
