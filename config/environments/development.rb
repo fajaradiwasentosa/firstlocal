@@ -1,7 +1,10 @@
-Enterprise::Application.configure do
+Pratamapolykem::Application.configure do
+  config.less.paths << "#{Rails.root}/lib/less/protractor/stylesheets"
+  config.less.compress = true
+
+  Slim::Engine.default_options[:pretty] = true
   # Settings specified here will take precedence over those in config/application.rb
-  # config.less.paths << "#{Rails.root}/lib/less/protractor/stylesheets"
-  # config.less.compress = true
+
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
@@ -11,7 +14,7 @@ Enterprise::Application.configure do
   config.whiny_nils = true
 
   # Show full error reports and disable caching
-  config.consider_all_requests_local       = false
+  config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send
@@ -31,23 +34,8 @@ Enterprise::Application.configure do
   config.active_record.auto_explain_threshold_in_seconds = 0.5
 
   # Do not compress assets
-  config.assets.compress = true
+  config.assets.compress = false
 
   # Expands the lines which load the assets
   config.assets.debug = true
-
-  config.action_mailer.delivery_method = :smtp
-
-  config.action_mailer.smtp_settings = {
-    :address => "smtp.gmail.com",
-    :port => 587,
-    :domain => 'gmail.com',
-    :user_name => 'tesajamang@gmail.com',
-    :password => 'tesajamang18',
-    :authentication => 'plain',
-    :enable_starttls_auto => true }
-
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
-
-  Slim::Engine.default_options[:pretty] = true
 end

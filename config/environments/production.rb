@@ -1,4 +1,4 @@
-Enterprise::Application.configure do
+Pratamapolykem::Application.configure do
   config.less.paths << "#{Rails.root}/lib/less/protractor/stylesheets"
   config.less.compress = true
   # Settings specified here will take precedence over those in config/application.rb
@@ -17,11 +17,10 @@ Enterprise::Application.configure do
   config.assets.compress = true
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
-  config.assets.compile = true
+  config.assets.compile = false
 
   # Generate digests for assets URLs
   config.assets.digest = true
-
 
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
@@ -49,9 +48,7 @@ Enterprise::Application.configure do
   # config.action_controller.asset_host = "http://assets.example.com"
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-  config.assets.precompile += %w( application.css bootstrap_and_overrides.css.less dashboard.less
-                                 global.less variable.less application.js bootstrap.js
-                                 dashboard.js.coffee )
+  # config.assets.precompile += %w( search.js )
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
@@ -63,24 +60,10 @@ Enterprise::Application.configure do
   # the I18n.default_locale when a translation can not be found)
   config.i18n.fallbacks = true
 
-  config.action_mailer.delivery_method = :smtp
-
-  config.action_mailer.smtp_settings = {
-    :address => "smtp.gmail.com",
-    :port => 587,
-    :domain => 'gmail.com',
-    :user_name => 'tesajamang@gmail.com',
-    :password => 'tesajamang18',
-    :authentication => 'plain',
-    :enable_starttls_auto => true }
-
-  config.action_mailer.default_url_options = { :host => 'gemilang-pratama-polykem.herokuapp.com' }
-
   # Send deprecation notices to registered listeners
-  Slim::Engine.set_default_options pretty: true, sort_attrs: false
+  config.active_support.deprecation = :notify
 
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
-
 end

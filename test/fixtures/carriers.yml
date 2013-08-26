@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  expired_date: 2013-08-24
+  basic_carrier: MyText
+  requirement: MyText
+
+two:
+  title: MyString
+  expired_date: 2013-08-24
+  basic_carrier: MyText
+  requirement: MyText

@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Enterprise::Application.config.secret_token = '66bcc84a40d16f40f8b75796779f9ced9567838d790f52ca52bca6476bf7117ac73961c3635780baa247837143520ebd26d782a02dad6f81ace69820e6b60333'
+Pratamapolykem::Application.config.secret_token = '2e65e5c644e95563fa0ad033745774c9f4a3b3ff15cf13829e6ee199a55e5502fec279b018d8ec1e70d0afefcf7124b1c9be8332c116950df68e8ebfbd594d3b'

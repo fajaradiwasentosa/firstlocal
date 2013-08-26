@@ -5,7 +5,7 @@ ActiveAdmin.setup do |config|
   # Set the title that is displayed on the main layout
   # for each of the active admin pages.
   #
-  config.site_title = "Enterprise"
+  config.site_title = "Pratamapolykem"
 
   # Set the link url for the title. For example, to take
   # users to your main site. Defaults to no link.
@@ -205,6 +205,8 @@ ActiveAdmin.setup do |config|
   # You can enable or disable them for all resources here.
   #
   # config.filters = true
+
+  config.register_javascript 'ckeditor/init.js'
 
 
 end

@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Enterprise::Application.load_tasks
+Pratamapolykem::Application.load_tasks

@@ -1,0 +1,137 @@
+DOCTYPE  html
+html
+	head
+	  title Pratamapolykem
+	  meta content="67b4cf6060cb0e01-573f462cc134cfd9-g8e85acc3927937c8-13" name="google-translate-customization"
+	  = stylesheet_link_tag    "application", :media => "all"
+	  = yield :stylesheet_contents
+	  = javascript_include_tag "application"
+	  = yield :javascript_contents
+	  = csrf_meta_tags
+	body
+		.navbar.navbar-fixed-top.header-container
+			.container
+				button.navbar-toggle type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse"
+					span.icon-bar
+					span.icon-bar
+					span.icon-bar
+				.logo.armata
+					/ - if !@profile.nil?
+					/ 	= link_to dashboard_path, class: "navbar-brand" do
+					/ 		= image_tag "/assets/pratama_logo.png", class: "width-32 marg-r-10"
+					/ 		= @profile.name.titleize
+					/ - else 
+					/ 	= link_to dashboard_path, class: "navbar-brand" do
+					/ 		= image_tag "/assets/pratama_logo.png", class: "width-32 marg-r-10"
+					/ 		= "Corporate Name"
+				.nav.navbar-nav.nav-collapse.collapse.navbar-responsive-collapse.nav-collapse-scrollable
+					ul.nav.navbar-nav
+						li.home
+							= link_to "Home", dashboard_path, class: "home"
+						li.profile
+							= link_to "Company Profile", profile_path, class: "profile"
+						li.product
+							= link_to "javasript:void(0);", class: "product dropdown-toggle", "data-toggle"=>"dropdown" do
+								| Products
+								span.caret
+							ul.dropdown-menu
+								li
+									= link_to "All Products", "javascript:void(0);"
+								li
+									= link_to "Specification", "javascript:void(0);"
+								li
+									= link_to "Distributors and Agents", "javascript:void(0);"
+								li
+									= link_to "Characteristics", "javascript:void(0);"
+								li
+									= link_to "Installation", "javascript:void(0);"
+						li.gallery
+							= link_to "Gallery", gallery_path, class: "gallery"
+						li.trick
+							= link_to "Tips and Tricks", tip_and_trick_path, class: "trick"
+						li.contact
+							= link_to "Contact Us", contact_us_path, class: "contact"
+						li.testimonial
+							= link_to "Testimonial", "javascript:void(0);", class: "testimonial"
+						li.translation-links
+							.translation-icons style="visibility:hidden"
+							  a.eng data-placement="0" href="#" british flag  
+							  a.id data-placement="1" href="#" indonesia flag
+							#google_translate_element style="display:none"
+		= yield
+		.col-lg-12
+			#footer.container-fluid.text-center
+				.container
+					- unless controller_name.eql? "company_profile"
+						.col-lg-12.text-center
+							ul.list-inline.information-container
+								li.list-inline-item.information data-toggle="tooltip" data-placement="top" data-original-title="Address"
+									= image_tag "home.svg", class: "width-20 item-information"
+									= "Address"
+								li.list-inline-item.information data-toggle="tooltip" data-placement="top" data-original-title="Location"
+									= image_tag "pin.svg", class: "width-20 item-information"
+									= "Location"
+								li.list-inline-item.information data-toggle="tooltip" data-placement="top" data-original-title="Messenger"
+									= image_tag "at.svg", class: "width-20 item-information"
+									= "Messenger"
+								li.list-inline-item.information data-toggle="tooltip" data-placement="top" data-original-title="Phone"
+									= image_tag "iphone.svg", class: "width-20 item-information"
+									= "Phone"
+								li.list-inline-item.information data-toggle="tooltip" data-placement="top" data-original-title="Email"
+									= image_tag "mail.svg", class: "width-20 item-information"
+									= "Email"
+					ul.list-inline
+						li.list-inline-item.home
+							= link_to "Dashboard", dashboard_path
+						li.list-inline-item.profile
+							= link_to "Company Profile", profile_path, class: "profile"
+						li.list-inline-item.product
+							= link_to "Products", product_path
+						li.list-inline-item.gallery
+							= link_to "Gallery", gallery_path
+						li.list-inline-item.trick
+							= link_to "Tips and Tricks", tip_and_trick_path
+						li.list-inline-item.contact
+							= link_to "Contact Us", contact_us_path
+						li.list-inline-item
+							= link_to "Specification", "javascript:void(0);"
+						li.list-inline-item
+							= link_to "Distributors and Agents", "javascript:void(0);"
+						li.list-inline-item
+							= link_to "Characteristics", "javascript:void(0);"
+						li.list-inline-item
+							= link_to "Installation", "javascript:void(0);"
+						li.list-inline-item
+							= link_to "Testimonials", "javascript:void(0);"
+					.col-lg-12.copyright.text-center.marg-v-15
+						p.label.label-default copyright &copy; Pratama Polykem 2013
+		javascript:
+		   	function googleTranslateElementInit() {
+		    	new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'en,id', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false}, 'google_translate_element');
+		  	}
+
+		  	$(window).load(function () {
+
+    			$('.translation-icons').css('visibility', 'visible');
+        	$('.translation-icons a').click(function(e) {
+            e.preventDefault();
+            var placement = $(this).data('placement');
+            var lang_num = $('.translation-icons a').length;
+            var $frame = $('.goog-te-menu-frame:first');
+
+            if (!$frame.size()) {
+                alert("Error: Could not find Google translate frame.");
+                return false;
+            }
+
+            var langs = $('.goog-te-menu-frame:first').contents().find('a span.text');
+
+            if(langs.length != lang_num) placement = placement+1;
+            $(".skiptranslate").hide();
+
+            langs.eq(placement).click();
+            return false;
+        	});
+				});
+
+		script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript"

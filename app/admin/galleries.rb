@@ -1,17 +1,42 @@
 ActiveAdmin.register Gallery do
-  index do
-    column :description
-    column :image
-    default_actions
+
+  index do                            
+    column :title               
+    column :image do |gallery|
+      image_tag gallery.image
+    end   
+    column :description do |gallery|
+      gallery.description.html_safe
+    end             
+    default_actions                   
   end
 
-  filter :image
-
-  form(:html => {multipart: true}) do |f|
-    f.inputs "Admin Details" do
-      f.input :image, as: "file"
-      f.input :description
+  show do |carrier|
+    attributes_table do
+      row :title
+      row :image do |gallery|
+        image_tag gallery.image
+      end   
+      row :description do |gallery|
+        gallery.description.html_safe
+      end
     end
-    f.actions
   end
+
+  form(:html => { :multipart => true }) do |f|
+    f.inputs do
+      f.input :title
+      if !f.object.new_record?
+        f.input :image, :as => :file, :hint => f.template.image_tag(f.object.image.url)
+      else
+        f.input :image, :as => :file
+      end
+      f.input :description, :as => :ckeditor
+    end
+    f.buttons
+  end
+
+  filter :title 
+  filter :description 
+  
 end

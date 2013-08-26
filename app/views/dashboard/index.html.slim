@@ -1,0 +1,160 @@
+.container-fluid.slider-container
+  #carousel-example-generic.carousel.slide
+    ol.carousel-indicators
+      li.active data-target="#carousel-example-generic" data-slide-to="0"
+      li data-target="#carousel-example-generic" data-slide-to="1"
+      li data-target="#carousel-example-generic" data-slide-to="2"
+    .carousel-inner
+      .item.active
+        = link_to image_tag("/assets/2.jpg")
+        .carousel-caption
+          p Lorem ipsum dipsum
+      .item
+        = link_to image_tag("/assets/2.jpg")
+        .carousel-caption
+          p Lorem ipsum dipsum
+      .item
+        = link_to image_tag("/assets/2.jpg")
+        .carousel-caption
+          p Lorem ipsum dipsum
+    = link_to "#carousel-example-generic", class: "left carousel-control", "data-slide"=>"prev" do
+      span.icon-prev
+    = link_to "#carousel-example-generic", class: "right carousel-control", "data-slide"=>"next" do
+      span.icon-next
+.navbar.header-container.container-fluid.no-rounded.visible-lg
+  .container
+    button.navbar-toggle type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse"
+      span.icon-home
+    .nav.navbar-nav.visible-lg
+.container.fill
+  .row
+    h1.title-color.armata.text-center.marg-t-50 Polykem On Your Life
+    .col-lg-12.content-container.text-center
+      .col-lg-12.text-center
+        = image_tag "/assets/mosaic.jpg", class: "marg-t-20 width-75p"
+      .col-lg-12.pad-left-30
+        p.text-color.marg-t-50.text-left Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum.
+  .row
+    .col-lg-12
+      legend
+        h1.armata.brand-color Exelences
+      .row
+        .col-lg-12.text-center
+          ul.nav
+            li.text-center.pull-left.marg-v-15
+              .col-lg-3.col-lg-push-9
+                = link_to image_tag("/assets/no_image.jpg", class: "img-responsive")
+              .col-lg-9.col-lg-push-3.text-left
+                h3.amata.brand-color.marg-t-5 Title
+                p.text-color.marg-t-10.text-left Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum.
+            li.text-center.pull-left.marg-v-15 
+              .col-lg-3.col-lg-push-9
+                = link_to image_tag("/assets/no_image.jpg", class: "img-responsive")
+              .col-lg-9.col-lg-push-3.text-left
+                h3.amata.brand-color.marg-t-5 Title
+                p.text-color.marg-t-10.text-left Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum Lorem ipsum dipsum.
+  .row
+    .col-lg-12
+      .col-lg-4.col-lg-push-8
+        legend
+          = image_tag "/assets/comments.png", class: "pull-left marg-r-5 width-32 img-responsive"
+          h2.armata.brand-color Testimonial
+        ul.list-group
+          li.list-group-item.media.border-bottom
+            = link_to "javascript:void(0);", class: "pull-left width-20p" do
+              = image_tag "/assets/no_image.jpg", class: "media-object width-100p"
+            .media-body
+              h4.media-heading.brand-color Name
+              p Lorem ipsum dipsum lorem ipsum dipsum lorem ipsum dipsum lorem ipsum dipsum lorem ipsum dipsum
+              = link_to "more", "javascript:void(0);", class: "brand-color"
+          li.list-group-item.media.border-bottom
+            = link_to "javascript:void(0);", class: "pull-left width-20p" do
+              = image_tag "/assets/no_image.jpg", class: "media-object width-100p"
+            .media-body
+              h4.media-heading.brand-color Name
+              p Lorem ipsum dipsum lorem ipsum dipsum lorem ipsum dipsum lorem ipsum dipsum lorem ipsum dipsum
+              = link_to "more", "javascript:void(0);", class: "brand-color"
+          li.list-group-item.media.border-bottom
+            = link_to "javascript:void(0);", class: "pull-left width-20p" do
+              = image_tag "/assets/no_image.jpg", class: "media-object width-100p"
+            .media-body
+              h4.media-heading.brand-color Name
+              p Lorem ipsum dipsum lorem ipsum dipsum lorem ipsum dipsum lorem ipsum dipsum lorem ipsum dipsum
+              = link_to "more", "javascript:void(0);", class: "brand-color"
+      .col-lg-8.col-lg-push-4
+        legend
+          h2.armata.brand-color Tips and Tricks
+        ul.list-group
+          li.list-group-item.media.border-bottom.no-border.no-background
+            = link_to "javascript:void(0);", class: "pull-left width-27p" do
+              = image_tag "/assets/no_image.jpg", class: "media-object width-100p"
+            .media-body
+              h5.media-heading.brand-color Title
+              h6.media-heading.brand-color Author
+              p.media-heading.brand-color 
+                small created at
+              p Lorem ipsum dipsum lorem ipsum dipsum lorem ipsum dipsum lorem ipsum dipsum lorem ipsum dipsum
+              = link_to "more", "javascript:void(0);", class: "brand-color"
+          li.list-group-item.media.border-bottom.no-border.no-background
+            = link_to "javascript:void(0);", class: "pull-left width-27p" do
+              = image_tag "/assets/no_image.jpg", class: "media-object width-100p"
+            .media-body
+              h5.media-heading.brand-color Title
+              h6.media-heading.brand-color Author
+              p.media-heading.brand-color 
+                small created at
+              p Lorem ipsum dipsum lorem ipsum dipsum lorem ipsum dipsum lorem ipsum dipsum lorem ipsum dipsum
+              = link_to "more", "javascript:void(0);", class: "brand-color"
+          li.list-group-item.media.border-bottom.no-border.no-background
+            = link_to "javascript:void(0);", class: "pull-left width-27p" do
+              = image_tag "/assets/no_image.jpg", class: "media-object width-100p"
+            .media-body
+              h5.media-heading.brand-color Title
+              h6.media-heading.brand-color Author
+              p.media-heading.brand-color 
+                small created at
+              p Lorem ipsum dipsum lorem ipsum dipsum lorem ipsum dipsum lorem ipsum dipsum lorem ipsum dipsum
+              = link_to "more", "javascript:void(0);", class: "brand-color"
+      .col-lg-12
+        legend
+          h1.armata.brand-color.text-shadow Gallery
+        ul.list-inline.text-center.bg-white.border-normal.pad-bottom-20
+          li.media.pratama-product
+            = link_to gallery_path do
+              = image_tag("/assets/no_image.jpg", class: "img-responsive")
+              .image-view
+                = image_tag("/assets/search.png")
+                p.marg-t-10.white view
+          li.media.pratama-product
+            = link_to gallery_path do
+              = image_tag("/assets/no_image.jpg", class: "img-responsive")
+              .image-view
+                = image_tag("/assets/search.png")
+                p.marg-t-10.white view
+          li.media.pratama-product
+            = link_to gallery_path do
+              = image_tag("/assets/no_image.jpg", class: "img-responsive")
+              .image-view
+                = image_tag("/assets/search.png")
+                p.marg-t-10.white view
+          li.media.pratama-product
+            = link_to gallery_path do
+              = image_tag("/assets/no_image.jpg", class: "img-responsive")
+              .image-view
+                = image_tag("/assets/search.png")
+                p.marg-t-10.white view
+          li.media.pratama-product
+            = link_to gallery_path do
+              = image_tag("/assets/no_image.jpg", class: "img-responsive")
+              .image-view
+                = image_tag("/assets/search.png")
+                p.marg-t-10.white view
+          li.media.pratama-product
+            = link_to gallery_path do
+              = image_tag("/assets/no_image.jpg", class: "img-responsive")
+              .image-view
+                = image_tag("/assets/search.png")
+                p.marg-t-10.white view   
+
+= content_for :javascript_contents do
+  = javascript_include_tag "dashboard"

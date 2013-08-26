@@ -1,36 +1,15 @@
-Enterprise::Application.routes.draw do
+Pratamapolykem::Application.routes.draw do
 
-  get "testimonials/index"
+  mount Ckeditor::Engine => '/ckeditor'
 
-  get "promotions/index"
+  resources :carriers
+
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
-  devise_for :users
-  ActiveAdmin.routes(self)
+  get "product/index"
 
-  resources :galleries do
-    get 'page/:page', :action => :index, :on => :collection
-  end
-  resources :contacts
-  resources :messages
-  resources :products
-  resources :tricks
-
-  match 'contact' => 'message#create', :as => 'contact', :via => :post
-
-  get "orders/index"
-  get "contacts/index"
-  get "tricks/index"
-  get "/products" => "products#index", as: :products
-  get "/profiles" => "profiles#index", as: :profiles
-  get "/dashboard" => "dashboard#index", as: :dashboard
-  get "/tips_and_tricks" => "tricks#index", as: :tip_and_trick
-  get "/contact_us" => "messages#index", as: :contact_us
-  get "/galleries" => "galleries#index", as: :gallery
-  get "/order" => "orders#index", as: :order
-  get "/promotions" => "promotions#index", as: :promotion
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -80,6 +59,13 @@ Enterprise::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
+
+  get "/dashboard" => "dashboard#index", as: :dashboard  
+  get "/company_profile" => "company_profile#index", as: :profile  
+  get "/gallery" => "gallery#index", as: :gallery  
+  get "/tipsandtricks" => "tip_trick#index", as: :tip_and_trick  
+  get "/contactus" => "contact_us#index", as: :contact_us  
+  get "/product" => "product#index", as: :product  
   root :to => 'dashboard#index'
 
   # See how all your routes lay out with "rake routes"
