@@ -2,56 +2,57 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
 
+# Bundle edge Rails instead:
+# gem 'rails', :git => 'git://github.com/rails/rails.git'
+
+# gem 'sqlite3'
+gem 'pg'
+
+
+# Gems used only for assets and not required
+# in production environments by default.
 group :assets do
-  gem 'libv8', '~> 3.11.8'
+  gem 'sass-rails',   '~> 3.2.3'
+  gem 'coffee-rails', '~> 3.2.1'
   gem 'therubyracer', :platforms => :ruby
+
+  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
+
   gem 'uglifier', '>= 1.0.3'
-  gem 'turbo-sprockets-rails3'
-end
-
-group :development do
-  gem 'pry-rails'
-  gem 'debugger'
-  gem 'awesome_print'
-  gem 'quiet_assets'
-  gem 'better_errors'
-  gem 'binding_of_caller'
-  gem 'meta_request', '0.2.0'
-end
-
-group :test do
-  gem 'minitest-rails'
-  gem 'minitest-rails-shoulda'
-  gem 'minitest-matchers'
-  gem 'database_cleaner'
-  gem 'turn'
-  gem 'factory_girl'
-  gem 'faker'
 end
 
 group :production do
-  gem 'passenger', '4.0.0.rc4'
 end
 
-gem 'active_attr'
-gem 'simple_form'
-gem 'activeadmin'
-gem 'coffee-rails', '~> 3.2.1'
-gem 'slim-rails'
+group :development do
+	gem 'better_errors'
+	gem 'pry'
+end
+
+gem 'jquery-rails', '~> 2.3.0'
+gem "jquery-ui-rails"
 gem 'less-rails'
-gem 'sass-rails',   '~> 3.2.5'
+gem 'slim-rails'
 gem 'thin'
-gem 'airbrake'
-gem 'pg'
-gem 'kaminari'
-gem 'kaminari-bootstrap'
-gem 'rails_config'
-gem 'devise'
+gem "ckeditor"
 gem 'carrierwave'
-gem 'mini_magick'
-gem 'friendly_id'
-gem 'squeel'
-gem 'inherited_resources'
-gem 'capistrano'
-gem 'rvm-capistrano'
-gem 'client_side_validations'
+gem "mini_magick"
+gem 'kaminari'
+gem 'bootstrap-kaminari-views'
+gem 'activeadmin'
+gem "meta_search",    '>= 1.1.0.pre'
+
+# To use ActiveModel has_secure_password
+# gem 'bcrypt-ruby', '~> 3.0.0'
+
+# To use Jbuilder templates for JSON
+# gem 'jbuilder'
+
+# Use unicorn as the app server
+# gem 'unicorn'
+
+# Deploy with Capistrano
+# gem 'capistrano'
+
+# To use debugger
+# gem 'debugger'
