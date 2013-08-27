@@ -17,5 +17,5 @@
 
 $(document).ready(function(){
 	$(".skiptranslate").hide();
-	$(".information").tooltip();
+	$(".information, .eng").tooltip();
 });

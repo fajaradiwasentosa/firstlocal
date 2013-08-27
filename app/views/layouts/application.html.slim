@@ -20,12 +20,12 @@ html
 					/ 	= link_to dashboard_path, class: "navbar-brand" do
 					/ 		= image_tag "/assets/pratama_logo.png", class: "width-32 marg-r-10"
 					/ 		= @profile.name.titleize
-					/ - else 
+					/ - else
 					/ 	= link_to dashboard_path, class: "navbar-brand" do
 					/ 		= image_tag "/assets/pratama_logo.png", class: "width-32 marg-r-10"
 					/ 		= "Corporate Name"
-				.nav.navbar-nav.nav-collapse.collapse.navbar-responsive-collapse.nav-collapse-scrollable
-					ul.nav.navbar-nav
+				.nav.navbar-nav.nav-collapse.collapse.navbar-responsive-collapse.nav-collapse-scrollable.width-100p
+					ul.nav.navbar-nav.width-100p
 						li.home
 							= link_to "Home", dashboard_path, class: "home"
 						li.profile
@@ -53,10 +53,12 @@ html
 							= link_to "Contact Us", contact_us_path, class: "contact"
 						li.testimonial
 							= link_to "Testimonial", "javascript:void(0);", class: "testimonial"
-						li.translation-links
+						li.translation-links.pull-right
 							.translation-icons style="visibility:hidden"
-							  a.eng data-placement="0" href="#" british flag  
-							  a.id data-placement="1" href="#" indonesia flag
+							  = link_to "javascript:void(0);", "data-placement"=>"0" do
+							  	= image_tag "england.png", "data-toggle"=>"tooltip", "data-placement"=>"bottom", class: "information", "data-original-title"=>"english language"
+							  = link_to "javascript:void(0);", "data-placement"=>"1" do
+							  	= image_tag "ind.png", "data-toggle"=>"tooltip", "data-placement"=>"bottom", class: "information", "data-original-title"=>"indonesian language"
 							#google_translate_element style="display:none"
 		= yield
 		.col-lg-12
