@@ -1,20 +1,22 @@
 default: &default
   adapter: postgresql
-  template: template0
-  encoding: unicode
-  reconnect: false
   pool: 10
   username: admin
-  password: root
+  password: 123456
+  host: localhost
+
+staging:
+  <<: *default
+  database: enterprise_staging
 
 development:
   <<: *default
-  database: pratama_polykem_development
+  database: enterprise_dev
 
 test:
   <<: *default
-  database: pratama_polykem_test
+  database: enterprise_test
 
 production:
   <<: *default
-  database: pratama_polykem
+  database: enterprise
