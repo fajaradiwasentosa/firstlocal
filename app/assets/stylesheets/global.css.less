@@ -59,6 +59,7 @@ legend { margin-bottom: 0; }
 .bg-brand-color { background-color: @brandColor; }
 .bg-panel-color { background-color: @grayPanel; }
 .bg-child-brand-color { background-color: rgb(213, 195, 55); }
+.bg-title-brand-color { background-color: rgb(117, 110, 85); }
 .bg-dark-gray { background-color: @darkGrayColor; }
 .bg-light-gray { background-color: @lightGrayColor; }
 .bg-white { background-color: white; }
@@ -108,17 +109,20 @@ legend { margin-bottom: 0; }
 .font18 { font-size: 18px; }
 
 // Margin
+.no-marg { margin: 0; }
 // top
 .marg-t-3 { margin-top: 3px }
 .marg-t-5 { margin-top: 5px }
 .marg-t-7 { margin-top: 7px }
 .marg-t-10 { margin-top: 10px }
 .marg-t-20 { margin-top: 20px }
+.marg-t-40 { margin-top: 40px }
 .marg-t-50 { margin-top: 50px }
-.marg-t-70 { margin-top: 70px }
+.marg-t-70 { margin-top: 7% }
 // bottom
 .marg-b-0 { margin-bottom: 0 }
 .marg-b-15 { margin-bottom: 15px }
+.marg-b-5 { margin-bottom: 5px }
 // right
 .marg-r-5 { margin-right: 5px; }
 .marg-r-10 { margin-right: 10px; }
@@ -243,6 +247,18 @@ legend { margin-bottom: 0; }
 			padding-bottom: 5px;
 		}
 	}
+}
+
+.right-container {
+	background-color: #ddd;
+	box-shadow: inset 0 0 7px #999;
+}
+
+.title-container {
+	-webkit-box-shadow: inset 0 -1px 0px rgb(255, 255, 255);
+	-moz-box-shadow: inset 0 -1px 0px rgb(255, 255, 255);
+	-o-box-shadow: inset 0 -1px 0px rgb(255, 255, 255);
+	box-shadow: inset 0 -1px 0px rgb(255, 255, 255);
 }
 
 #footer {
