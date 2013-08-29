@@ -1,0 +1,6 @@
+#modal-photo.modal.fade tabindex="-1" role="dialog" aria-labelledby="pratamaModalPhoto" aria-hidden="true"
+  .modal-dialog
+    .modal-content
+      = image_tag "no_image.jpg", class: "width-100p"
+      .modal-footer.bg-brand-color
+        = link_to "close", "javascript:void(0);", "data-dismiss"=>"modal", class: "btn btn-default"

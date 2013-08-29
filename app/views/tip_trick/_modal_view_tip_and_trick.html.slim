@@ -1,0 +1,11 @@
+#modal-view-tip-and-trick.modal.fade tabindex="-1" role="dialog" aria-labelledby="pratamaModalPhoto" aria-hidden="true"
+  .modal-dialog
+    .modal-content
+      .modal-header
+        h4.modal-title Title
+        p.font10.text-left.text-color.arial created at
+      .modal-body
+        = image_tag "no_image.jpg", class: "width-100p marg-b-15"
+        p.text-left.text-color.arial Lorem ipsum dipsum lorem ipsum dipsum lorem ipsum dipsum lorem ipsum dipsum lorem ipsum dipsum lorem ipsum dipsum lorem ipsum dipsum lorem ipsum dipsum.
+      .modal-footer.bg-brand-color
+        = link_to "Close", "javascript:void(0);", "data-dismiss"=>"modal", class: "btn btn-default btn-sm"

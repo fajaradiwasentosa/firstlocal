@@ -4,12 +4,19 @@
   .col-lg-12
     .panel.bg-title-brand-color.white.marg-b-5.title-container
       h3.no-marg Photos
-      p.no-marg album
+      p.no-marg.arial album
     ul.list-inline.no-background.text-center
       li.list-inline-item.thumbnail.col-lg-3.marg-b-15
-        = link_to image_tag("no_image.jpg", class: "col-lg-12 no-pad"), "javascript:void(0);", class: "col-lg-12 no-pad"
+        = link_to image_tag("no_image.jpg", class: "col-lg-12 no-pad"), "#modal-photo", class: "col-lg-12 no-pad", "data-toggle"=>"modal"
         .caption.col-lg-12.no-pad
           h5.brand-color.text-left.no-marg Title
-          p.font10.text-left created at
+          p.font10.text-left.text-color.arial created at
+      = render "modal_photo_gallery"
 = content_for :javascript_contents do
   = javascript_include_tag "gallery"
+javascript:
+  $(document).ready(function(){
+    $("#modal").onload(function(){
+      $(".loader-photo").fadeIn();
+    });
+  });
