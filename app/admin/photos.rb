@@ -1,7 +1,10 @@
-ActiveAdmin.register Gallery do
+ActiveAdmin.register Photo do
 
   index do                            
-    column :title               
+    column :title
+    column :album do |photo|
+      photo.album.name
+    end               
     column :image do |gallery|
       image_tag gallery.image
     end   
@@ -14,6 +17,9 @@ ActiveAdmin.register Gallery do
   show do |carrier|
     attributes_table do
       row :title
+      row :album do |photo|
+        photo.album.name
+      end
       row :image do |gallery|
         image_tag gallery.image
       end   
@@ -31,6 +37,7 @@ ActiveAdmin.register Gallery do
       else
         f.input :image, :as => :file
       end
+      f.input :album
       f.input :description, :as => :ckeditor
     end
     f.buttons

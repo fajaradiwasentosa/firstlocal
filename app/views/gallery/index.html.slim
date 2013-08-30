@@ -7,31 +7,33 @@
         .panel.bg-title-brand-color.white.marg-b-5.title-container
           h3.no-marg Album
         ul.list-group.no-background
-          li.list-group-item.gallery-item.bg-white.marg-b-15
-            .row
-              .col-lg-8.col-lg-push-4.pratama-gallery-album
-                .text-center
-                  = image_tag "mosaic.jpg", class: "width-100p pratama-album-cover"
-                .show-large-image-view.text-center.hide
-                  = link_to "javascript:void(0);" do
-                    = image_tag "search.png", class: "width-10p"
-                    p view image
-              .col-lg-4.col-lg-push-8.text-center.pratama-gallery-information
-                h3.brand-color.text-left Title
-                p.font10.text-left created at
-                p.font12 Lorem ipsum dipsum lorem ipsum dipsum lorem ipsum dipsum lorem ipsum dipsum lorem ipsum dipsum lorem ipsum dipsum lorem ipsum dipsum lorem ipsum dipsum.
-                .show-image-view.hide
-                  = link_to image_tag("search_black.png", class: "transparant-3 width-25"), "javascript:void(0);"
+          - @albums.each do |album|
+            li.list-group-item.gallery-item.bg-white.marg-b-15
+              .row
+                .col-lg-8.col-lg-push-4.pratama-gallery-album
+                  .text-center
+                    = image_tag cover_album(album), class: "width-100p pratama-album-cover"
+                  .show-large-image-view.text-center.hide
+                    = link_to "javascript:void(0);" do
+                      = image_tag "search.png", class: "width-10p"
+                      p view image
+                .col-lg-4.col-lg-push-8.text-center.pratama-gallery-information
+                  h3.brand-color.text-left = album.name
+                  p.font10.text-left = album.created_at.strftime("%B %d, %Y")
+                  p.font12 = album.description.html_safe
+                  .show-image-view.hide
+                    = link_to image_tag("search_black.png", class: "transparant-3 width-25"), "javascript:void(0);"
       .col-lg-3.col-lg-push-9
         .panel.bg-title-brand-color.white.marg-b-5.title-container
           h3.no-marg Exelences
         ul.media-list.list-group.no-background
-          li.media.pratama-gallery-right-content.list-group-item
-            = link_to "javascript:void(0);", class: "pull-left width-100p" do
-              = image_tag "no_image.jpg", class: "media-object width-100p"
-            p.pull-left.font10.marg-t-10 Lorem ipsum dipsum lorem ipsum dipsum lorem ipsum dipsum lorem ipsum dipsum lorem ipsum dipsum lorem ipsum dipsum lorem ipsum dipsum lorem ipsum dipsum.
-            = link_to "javacript:void(0);", class: "pull-left marg-t-10 width-100p text-right" do
-              = image_tag "search_black.png", class: "width-25 transparant-3"
+          - @exelences.each do |exelence|
+            li.media.pratama-gallery-right-content.list-group-item
+              = link_to "javascript:void(0);", class: "pull-left width-100p" do
+                = image_tag exelence.image, class: "media-object width-100p"
+              p.pull-left.font10.marg-t-10 = exelence.description
+              = link_to "javacript:void(0);", class: "pull-left marg-t-10 width-100p text-right" do
+                = image_tag "search_black.png", class: "width-25 transparant-3"
 
 = content_for :javascript_contents do
   = javascript_include_tag "gallery"
