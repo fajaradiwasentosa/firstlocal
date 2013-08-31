@@ -3,23 +3,25 @@
     .panel.bg-title-brand-color.white.marg-b-5.title-container
       h3.no-marg Contact us
     .well.col-lg-12
-      form.form-horizontal role="form"
+      - if notice
+        .alert= notice
+      = form_tag send_contact_form_path, class: "form-horizontal", role: "form" do
         .form-group
           label.col-lg-2.control-label.font12.arial for="inputFirstName" First Name
           .col-lg-10
-            input.form-control type="text" id="inputFirstName" placeholder="First Name"
+            = text_field_tag 'contact[first_name]', nil, placeholder: 'First Name', id: "inputFirstName", class: "form-control"
         .form-group
           label.col-lg-2.control-label.font12.arial for="inputLastName" Last Name
           .col-lg-10
-            input.form-control type="text" id="inputLastName" placeholder="Last Name"
+            = text_field_tag 'contact[last_name]', nil, placeholder: 'Last Name', id: "inputLastName", class: "form-control"
         .form-group
           label.col-lg-2.control-label.font12.arial for="inputEmail" Email
           .col-lg-10
-            input.form-control type="email" id="inputEmail" placeholder="Email"
+            = email_field_tag 'contact[email]', nil, placeholder: 'Email', id: "inputEmail", class: "form-control"
         .form-group
           label.col-lg-2.control-label.font12.arial for="inputEmail" Message
           .col-lg-10
-            textarea.form-control type="email" id="inputMessage" style="resize: none;"
+            = text_area_tag "contact[message]", nil, id: "inputMessage", class: "form-control", style:"resize: none;"
         .form-group
           .col-lg-2.col-lg-push-10
           .col-lg-10.col-lg-push-2.text-right
