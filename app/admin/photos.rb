@@ -1,10 +1,10 @@
 ActiveAdmin.register Photo do
 
-  index do                            
+  index do                           
     column :title
     column :album do |photo|
-      photo.album.name
-    end               
+      photo.album.name unless photo.album.blank?
+    end              
     column :image do |gallery|
       image_tag gallery.image
     end   
@@ -14,12 +14,12 @@ ActiveAdmin.register Photo do
     default_actions                   
   end
 
-  show do |carrier|
+  show do |photo|
     attributes_table do
       row :title
       row :album do |photo|
-        photo.album.name
-      end
+        photo.album.name  
+      end unless photo.album.blank?
       row :image do |gallery|
         image_tag gallery.image
       end   
@@ -37,7 +37,7 @@ ActiveAdmin.register Photo do
       else
         f.input :image, :as => :file
       end
-      f.input :album
+      f.input :album unless Album.all.empty?
       f.input :description, :as => :ckeditor
     end
     f.buttons
